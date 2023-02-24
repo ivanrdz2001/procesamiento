@@ -24,8 +24,8 @@ namespace ProcesamientoCorrecto
 
         private void pictureBox1_MouseHover(object sender, EventArgs e)
         {
-            pictureBox1.Size = new System.Drawing.Size(90, 60); // Desired hovered size
-        }
+
+          }
 
         private void Salir_Click(object sender, EventArgs e)
         {
@@ -35,6 +35,27 @@ namespace ProcesamientoCorrecto
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Form4 videoW = new Form4();
+            videoW.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            FormImage imageW = new FormImage();
+            imageW.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Form3 detect = new Form3();
+            detect.ShowDialog();
+            this.Close();
         }
     }
 }

@@ -64,3 +64,4 @@ D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\obj\D
 D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\obj\Debug\net5.0-windows\ProcesamientoCorrecto.pdb
 D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\obj\Debug\net5.0-windows\ProcesamientoCorrecto.genruntimeconfig.cache
 D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\obj\Debug\net5.0-windows\ref\ProcesamientoCorrecto.dll
+D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\obj\Debug\net5.0-windows\ProcesamientoCorrecto.Manual.resources
