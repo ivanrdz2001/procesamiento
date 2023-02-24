@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\FCFM - Trabajos\\Procesamiento\\ProcesamientoCorrecto\\ProcesamientoCorrecto\\ProcesamientoCorrecto.csproj": {}
+    "D:\\Procesamiento\\procesamiento\\ProcesamientoCorrecto\\ProcesamientoCorrecto\\ProcesamientoCorrecto.csproj": {}
   },
   "projects": {
-    "D:\\FCFM - Trabajos\\Procesamiento\\ProcesamientoCorrecto\\ProcesamientoCorrecto\\ProcesamientoCorrecto.csproj": {
+    "D:\\Procesamiento\\procesamiento\\ProcesamientoCorrecto\\ProcesamientoCorrecto\\ProcesamientoCorrecto.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\FCFM - Trabajos\\Procesamiento\\ProcesamientoCorrecto\\ProcesamientoCorrecto\\ProcesamientoCorrecto.csproj",
+        "projectUniqueName": "D:\\Procesamiento\\procesamiento\\ProcesamientoCorrecto\\ProcesamientoCorrecto\\ProcesamientoCorrecto.csproj",
         "projectName": "ProcesamientoCorrecto",
-        "projectPath": "D:\\FCFM - Trabajos\\Procesamiento\\ProcesamientoCorrecto\\ProcesamientoCorrecto\\ProcesamientoCorrecto.csproj",
+        "projectPath": "D:\\Procesamiento\\procesamiento\\ProcesamientoCorrecto\\ProcesamientoCorrecto\\ProcesamientoCorrecto.csproj",
         "packagesPath": "C:\\Users\\PCMR\\.nuget\\packages\\",
-        "outputPath": "D:\\FCFM - Trabajos\\Procesamiento\\ProcesamientoCorrecto\\ProcesamientoCorrecto\\obj\\",
+        "outputPath": "D:\\Procesamiento\\procesamiento\\ProcesamientoCorrecto\\ProcesamientoCorrecto\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\PCMR\\AppData\\Roaming\\NuGet\\NuGet.Config",

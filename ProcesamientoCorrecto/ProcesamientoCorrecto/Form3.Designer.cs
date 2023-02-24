@@ -52,7 +52,10 @@ namespace ProcesamientoCorrecto
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gold;
+            this.panel1.Controls.Add(this.histogramImageForm);
+            this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.Salir);
+            this.panel1.Controls.Add(this.groupBox3);
             this.panel1.Location = new System.Drawing.Point(0, 109);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(207, 505);
@@ -74,7 +77,7 @@ namespace ProcesamientoCorrecto
             // groupBox1
             // 
             this.groupBox1.Font = new System.Drawing.Font("Montserrat Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(250, 290);
+            this.groupBox1.Location = new System.Drawing.Point(22, 181);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(170, 86);
             this.groupBox1.TabIndex = 5;
@@ -87,7 +90,7 @@ namespace ProcesamientoCorrecto
             this.histogramImageForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.histogramImageForm.Font = new System.Drawing.Font("Coolvetica Rg", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.histogramImageForm.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.histogramImageForm.Location = new System.Drawing.Point(242, 134);
+            this.histogramImageForm.Location = new System.Drawing.Point(0, 27);
             this.histogramImageForm.Name = "histogramImageForm";
             this.histogramImageForm.Size = new System.Drawing.Size(207, 102);
             this.histogramImageForm.TabIndex = 4;
@@ -153,6 +156,7 @@ namespace ProcesamientoCorrecto
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.pictureBox1);
             this.groupBox2.Font = new System.Drawing.Font("Coolvetica Rg", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.Location = new System.Drawing.Point(455, 12);
@@ -175,7 +179,7 @@ namespace ProcesamientoCorrecto
             // groupBox3
             // 
             this.groupBox3.Font = new System.Drawing.Font("Montserrat Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox3.Location = new System.Drawing.Point(250, 440);
+            this.groupBox3.Location = new System.Drawing.Point(8, 333);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(170, 94);
             this.groupBox3.TabIndex = 6;
@@ -191,9 +195,6 @@ namespace ProcesamientoCorrecto
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1308, 607);
             this.ControlBox = false;
-            this.Controls.Add(this.histogramImageForm);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.camaraWebFoto);
             this.Controls.Add(this.comboEfectosImagen);

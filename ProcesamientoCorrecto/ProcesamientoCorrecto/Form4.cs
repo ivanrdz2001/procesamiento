@@ -32,5 +32,10 @@ namespace ProcesamientoCorrecto
             Application.Exit();
 
         }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

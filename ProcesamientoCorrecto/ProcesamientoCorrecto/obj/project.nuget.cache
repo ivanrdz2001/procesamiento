@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TSI62pr/cN5NWH5tmxdNCyvbqLN+zMtCVroVPUKOgZjh61tJq4kyNXzoe0WzZfFV6zKWVcUo75aUY2TPuWMGUg==",
+  "dgSpecHash": "dIpVN6qPC8JxiJR6FootXNi88OJ7T7QdVpDFiLOzMjr5WvOHFOUvvWzGW0hrnXKWy6vHy68OdpupOjTnXRipnQ==",
   "success": true,
-  "projectFilePath": "D:\\FCFM - Trabajos\\Procesamiento\\ProcesamientoCorrecto\\ProcesamientoCorrecto\\ProcesamientoCorrecto.csproj",
+  "projectFilePath": "D:\\Procesamiento\\procesamiento\\ProcesamientoCorrecto\\ProcesamientoCorrecto\\ProcesamientoCorrecto.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PCMR\\.nuget\\packages\\aforge\\2.2.5\\aforge.2.2.5.nupkg.sha512",
     "C:\\Users\\PCMR\\.nuget\\packages\\aforge.imaging\\2.2.5\\aforge.imaging.2.2.5.nupkg.sha512",

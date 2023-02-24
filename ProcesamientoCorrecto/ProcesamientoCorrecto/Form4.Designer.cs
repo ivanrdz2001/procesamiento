@@ -63,7 +63,7 @@ namespace ProcesamientoCorrecto
             this.Salir.BackColor = System.Drawing.Color.PaleVioletRed;
             this.Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Salir.Font = new System.Drawing.Font("Coolvetica Rg", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Salir.Location = new System.Drawing.Point(10, 356);
+            this.Salir.Location = new System.Drawing.Point(10, 365);
             this.Salir.Name = "Salir";
             this.Salir.Size = new System.Drawing.Size(194, 55);
             this.Salir.TabIndex = 14;
@@ -106,6 +106,7 @@ namespace ProcesamientoCorrecto
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.pictureBox1);
             this.groupBox2.Font = new System.Drawing.Font("Coolvetica Rg", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.Location = new System.Drawing.Point(294, 23);
@@ -114,6 +115,7 @@ namespace ProcesamientoCorrecto
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Video";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // pictureBox1
             // 

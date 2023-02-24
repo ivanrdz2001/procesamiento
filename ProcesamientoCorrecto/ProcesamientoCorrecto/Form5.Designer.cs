@@ -60,6 +60,7 @@
             // 
             // resetMainButton
             // 
+            this.resetMainButton.BackColor = System.Drawing.Color.Transparent;
             this.resetMainButton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.resetMainButton.Image = ((System.Drawing.Image)(resources.GetObject("resetMainButton.Image")));
             this.resetMainButton.Location = new System.Drawing.Point(0, 0);
@@ -72,15 +73,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Montserrat Black", 51.99999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(155, 94);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(588, 97);
             this.label1.TabIndex = 8;
             this.label1.Text = "Elige un modo";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(52, 208);
             this.pictureBox1.Name = "pictureBox1";
@@ -92,6 +96,7 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(324, 208);
             this.pictureBox2.Name = "pictureBox2";
@@ -102,6 +107,7 @@
             // 
             // pictureBox3
             // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(596, 208);
             this.pictureBox3.Name = "pictureBox3";
@@ -113,6 +119,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Montserrat Black", 21.99999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(111, 429);
             this.label2.Name = "label2";
@@ -133,6 +140,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Montserrat Black", 21.99999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.Location = new System.Drawing.Point(373, 429);
             this.label4.Name = "label4";
