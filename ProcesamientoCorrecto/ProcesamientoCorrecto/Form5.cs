@@ -46,9 +46,10 @@ namespace ProcesamientoCorrecto
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
+            this.Hide();
+
             FormImage imageW = new FormImage();
             imageW.ShowDialog();
-            this.Close();
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)

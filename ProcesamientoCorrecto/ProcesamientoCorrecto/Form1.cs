@@ -76,6 +76,8 @@ namespace ProcesamientoCorrecto
 
             this.Hide();
 
+
+
         }
 
         private void Form1_FormClosing(Object sender, FormClosingEventArgs e)

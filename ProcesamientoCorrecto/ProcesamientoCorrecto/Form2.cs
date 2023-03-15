@@ -30,8 +30,11 @@ namespace ProcesamientoCorrecto
          
             InitializeComponent();
 
-            resultante = new Bitmap(800, 600);
 
+
+
+
+            resultante = new Bitmap(800, 600);
             anchoVentana = 800;
             altoVentana = 600;
 
@@ -42,15 +45,7 @@ namespace ProcesamientoCorrecto
 
         }
 
-        private void resetMainButton_Click(object sender, EventArgs e)
-        {
-            Reset();
-        }
 
-        private void Reset()
-        {
-            throw new NotImplementedException();
-        }
 
         private void comboEfectosImagen_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -94,7 +89,7 @@ namespace ProcesamientoCorrecto
 
         private void loadImagePictureForm_Click(object sender, EventArgs e)
         {
-            if(openFileDialog1.ShowDialog() == DialogResult.OK)
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 original = (Bitmap)(Bitmap.FromFile(openFileDialog1.FileName));
                 anchoVentana = original.Width;
@@ -103,6 +98,7 @@ namespace ProcesamientoCorrecto
                 resultante = original;
 
                 this.Invalidate();
+
             }
         }
 
@@ -129,6 +125,16 @@ namespace ProcesamientoCorrecto
                 g.Dispose();
             }
 
+        }
+
+        private void picImage_Paint(object sender, PaintEventArgs e)
+        {
+            if (resultante != null)
+            {
+                picImage.Image = resultante;
+
+
+            }
         }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
