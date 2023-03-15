@@ -25,14 +25,8 @@ namespace ProcesamientoCorrecto
 
         public FormImage()
         {
-
-            //fin del combo box
          
             InitializeComponent();
-
-
-
-
 
             resultante = new Bitmap(800, 600);
             anchoVentana = 800;
@@ -131,7 +125,6 @@ namespace ProcesamientoCorrecto
         {
             if (resultante != null)
             {
-                picImage.Image = resultante;
 
 
             }
