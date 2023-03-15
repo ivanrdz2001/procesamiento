@@ -46,6 +46,8 @@ namespace ProcesamientoCorrecto
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resetMainButton)).BeginInit();
@@ -66,7 +68,7 @@ namespace ProcesamientoCorrecto
             this.loadImagePictureForm.TabIndex = 3;
             this.loadImagePictureForm.Text = "Cargar imagen";
             this.loadImagePictureForm.UseVisualStyleBackColor = false;
-            this.loadImagePictureForm.Click += new System.EventHandler(this.aboutMainForm_Click);
+            this.loadImagePictureForm.Click += new System.EventHandler(this.loadImagePictureForm_Click);
             this.loadImagePictureForm.Paint += new System.Windows.Forms.PaintEventHandler(this.loadImagePictureForm_Paint);
             // 
             // panel1
@@ -197,6 +199,7 @@ namespace ProcesamientoCorrecto
             this.button2.TabIndex = 11;
             this.button2.Text = "Guardar foto";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.SaveImage_Click);
             // 
             // pictureBox3
             // 
@@ -221,6 +224,12 @@ namespace ProcesamientoCorrecto
             this.label1.TabIndex = 13;
             this.label1.Text = "Toma una foto";
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "Imagenes PNG|*.png|Imagenes Bitmap|*.bmp|Imagenes Jpg|*.jpg";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
             // FormImage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -242,6 +251,7 @@ namespace ProcesamientoCorrecto
             this.Name = "FormImage";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.FormMenu_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormImage_Paint);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.resetMainButton)).EndInit();
@@ -269,5 +279,7 @@ namespace ProcesamientoCorrecto
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Salir;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
