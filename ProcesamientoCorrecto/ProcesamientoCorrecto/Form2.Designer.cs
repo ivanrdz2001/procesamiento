@@ -40,6 +40,7 @@ namespace ProcesamientoCorrecto
             this.resetMainButton = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.picImage = new System.Windows.Forms.PictureBox();
             this.comboEfectosImagen = new System.Windows.Forms.ComboBox();
             this.camaraWebFoto = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -48,13 +49,12 @@ namespace ProcesamientoCorrecto
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.picImage = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resetMainButton)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // loadImagePictureForm
@@ -152,6 +152,18 @@ namespace ProcesamientoCorrecto
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Imagen";
             // 
+            // picImage
+            // 
+            this.picImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picImage.Image = ((System.Drawing.Image)(resources.GetObject("picImage.Image")));
+            this.picImage.Location = new System.Drawing.Point(3, 36);
+            this.picImage.Name = "picImage";
+            this.picImage.Size = new System.Drawing.Size(519, 325);
+            this.picImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picImage.TabIndex = 0;
+            this.picImage.TabStop = false;
+            this.picImage.Click += new System.EventHandler(this.picImage_Click);
+            // 
             // comboEfectosImagen
             // 
             this.comboEfectosImagen.BackColor = System.Drawing.Color.Crimson;
@@ -228,17 +240,6 @@ namespace ProcesamientoCorrecto
             this.menuStrip1.TabIndex = 14;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // picImage
-            // 
-            this.picImage.Image = ((System.Drawing.Image)(resources.GetObject("picImage.Image")));
-            this.picImage.Location = new System.Drawing.Point(16, 39);
-            this.picImage.Name = "picImage";
-            this.picImage.Size = new System.Drawing.Size(487, 319);
-            this.picImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picImage.TabIndex = 0;
-            this.picImage.TabStop = false;
-            this.picImage.Paint += new System.Windows.Forms.PaintEventHandler(this.picImage_Paint);
-            // 
             // FormImage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -262,13 +263,12 @@ namespace ProcesamientoCorrecto
             this.Name = "FormImage";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.FormMenu_Load);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.FormImage_Paint);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.resetMainButton)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

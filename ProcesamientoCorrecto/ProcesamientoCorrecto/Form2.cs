@@ -14,11 +14,13 @@ namespace ProcesamientoCorrecto
     {
         private Bitmap original;
         private Bitmap resultante;
+        private Bitmap apilado;
         private int[] histograma = new int[256];
-        private int[,] conv3x3 = new int[3, 3];
+        private int[,] conv3x3 = new int [3, 3];
         private int factor;
         private int offset;
 
+        private string rutaAux;
         //variables para el double buffer
 
         private int anchoVentana, altoVentana;
@@ -28,9 +30,18 @@ namespace ProcesamientoCorrecto
          
             InitializeComponent();
 
-            resultante = new Bitmap(800, 600);
-            anchoVentana = 800;
-            altoVentana = 600;
+            System.Object[] ItemObject = new System.Object[8];
+
+            ItemObject[0] = "NEGATIVO";
+            ItemObject[1] = "ROJO";
+            ItemObject[2] = "VERDE";
+            ItemObject[3] = "AZUL";
+            ItemObject[4] = "SEPIA";
+            ItemObject[5] = "3D";
+            ItemObject[6] = "PIXEL";
+            ItemObject[7] = "BLANCO/NEGRO";
+
+            comboEfectosImagen.Items.AddRange(ItemObject);
 
         }
 
@@ -86,13 +97,15 @@ namespace ProcesamientoCorrecto
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 original = (Bitmap)(Bitmap.FromFile(openFileDialog1.FileName));
-                anchoVentana = original.Width;
-                altoVentana = original.Height;
-
+                rutaAux = openFileDialog1.FileName;
                 resultante = original;
+                apilado = resultante;
+            }
 
-                this.Invalidate();
+            if(original!= null)
+            {
 
+                picImage.Image = resultante;
             }
         }
 
@@ -104,30 +117,13 @@ namespace ProcesamientoCorrecto
             }
         }
 
-        private void FormImage_Paint(object sender, PaintEventArgs e)
+
+
+
+
+        private void picImage_Click(object sender, EventArgs e)
         {
-            if (resultante != null)
-            {
-                Graphics g = e.Graphics;
 
-                AutoScrollMinSize = new Size(anchoVentana, altoVentana);
-
-
-
-                g.DrawImage(resultante, new Rectangle(this.AutoScrollPosition.X, this.AutoScrollPosition.Y + 30, anchoVentana, altoVentana));
-
-                g.Dispose();
-            }
-
-        }
-
-        private void picImage_Paint(object sender, PaintEventArgs e)
-        {
-            if (resultante != null)
-            {
-
-
-            }
         }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
