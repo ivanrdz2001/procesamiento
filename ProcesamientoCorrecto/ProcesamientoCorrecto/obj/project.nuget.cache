@@ -1,19 +1,23 @@
 {
   "version": 2,
-  "dgSpecHash": "dIpVN6qPC8JxiJR6FootXNi88OJ7T7QdVpDFiLOzMjr5WvOHFOUvvWzGW0hrnXKWy6vHy68OdpupOjTnXRipnQ==",
+  "dgSpecHash": "pwOb6sLVucVi9yTjH2lQnKUoOF17FmUe3LgctEMUO1HzZJ1YDEE/yJISn6VTZgVevd5HajJxCmYMVUj6V9c2Aw==",
   "success": true,
-  "projectFilePath": "D:\\Procesamiento\\procesamiento\\ProcesamientoCorrecto\\ProcesamientoCorrecto\\ProcesamientoCorrecto.csproj",
+  "projectFilePath": "C:\\Users\\alexr\\FCFM-TRABAJOS\\procesamiento\\ProcesamientoCorrecto\\ProcesamientoCorrecto\\ProcesamientoCorrecto.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\PCMR\\.nuget\\packages\\aforge\\2.2.5\\aforge.2.2.5.nupkg.sha512",
-    "C:\\Users\\PCMR\\.nuget\\packages\\aforge.imaging\\2.2.5\\aforge.imaging.2.2.5.nupkg.sha512",
-    "C:\\Users\\PCMR\\.nuget\\packages\\aforge.math\\2.2.5\\aforge.math.2.2.5.nupkg.sha512",
-    "C:\\Users\\PCMR\\.nuget\\packages\\aforge.video\\2.2.5\\aforge.video.2.2.5.nupkg.sha512",
-    "C:\\Users\\PCMR\\.nuget\\packages\\aforge.video.directshow\\2.2.5\\aforge.video.directshow.2.2.5.nupkg.sha512",
-    "C:\\Users\\PCMR\\.nuget\\packages\\aforge.vision\\2.2.5\\aforge.vision.2.2.5.nupkg.sha512",
-    "C:\\Users\\PCMR\\.nuget\\packages\\font.awesome\\5.15.4\\font.awesome.5.15.4.nupkg.sha512",
-    "C:\\Users\\PCMR\\.nuget\\packages\\fontawesome.sharp\\6.2.1\\fontawesome.sharp.6.2.1.nupkg.sha512",
-    "C:\\Users\\PCMR\\.nuget\\packages\\fontawesome.sharp.pro\\6.2.1\\fontawesome.sharp.pro.6.2.1.nupkg.sha512",
-    "C:\\Users\\PCMR\\.nuget\\packages\\material.icons\\1.1.35\\material.icons.1.1.35.nupkg.sha512"
+    "C:\\Users\\alexr\\.nuget\\packages\\aforge\\2.2.5\\aforge.2.2.5.nupkg.sha512",
+    "C:\\Users\\alexr\\.nuget\\packages\\aforge.imaging\\2.2.5\\aforge.imaging.2.2.5.nupkg.sha512",
+    "C:\\Users\\alexr\\.nuget\\packages\\aforge.math\\2.2.5\\aforge.math.2.2.5.nupkg.sha512",
+    "C:\\Users\\alexr\\.nuget\\packages\\aforge.video\\2.2.5\\aforge.video.2.2.5.nupkg.sha512",
+    "C:\\Users\\alexr\\.nuget\\packages\\aforge.video.directshow\\2.2.5\\aforge.video.directshow.2.2.5.nupkg.sha512",
+    "C:\\Users\\alexr\\.nuget\\packages\\aforge.vision\\2.2.5\\aforge.vision.2.2.5.nupkg.sha512",
+    "C:\\Users\\alexr\\.nuget\\packages\\font.awesome\\5.15.4\\font.awesome.5.15.4.nupkg.sha512",
+    "C:\\Users\\alexr\\.nuget\\packages\\fontawesome.sharp\\6.2.1\\fontawesome.sharp.6.2.1.nupkg.sha512",
+    "C:\\Users\\alexr\\.nuget\\packages\\fontawesome.sharp.pro\\6.2.1\\fontawesome.sharp.pro.6.2.1.nupkg.sha512",
+    "C:\\Users\\alexr\\.nuget\\packages\\material.icons\\1.1.35\\material.icons.1.1.35.nupkg.sha512",
+    "C:\\Users\\alexr\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\alexr\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\alexr\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\alexr\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.17\\microsoft.netcore.app.host.win-x64.5.0.17.nupkg.sha512"
   ],
   "logs": [
     {

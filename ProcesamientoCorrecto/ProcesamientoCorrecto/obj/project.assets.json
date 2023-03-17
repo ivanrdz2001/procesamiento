@@ -305,19 +305,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\PCMR\\.nuget\\packages\\": {}
+    "C:\\Users\\alexr\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Procesamiento\\procesamiento\\ProcesamientoCorrecto\\ProcesamientoCorrecto\\ProcesamientoCorrecto.csproj",
+      "projectUniqueName": "C:\\Users\\alexr\\FCFM-TRABAJOS\\procesamiento\\ProcesamientoCorrecto\\ProcesamientoCorrecto\\ProcesamientoCorrecto.csproj",
       "projectName": "ProcesamientoCorrecto",
-      "projectPath": "D:\\Procesamiento\\procesamiento\\ProcesamientoCorrecto\\ProcesamientoCorrecto\\ProcesamientoCorrecto.csproj",
-      "packagesPath": "C:\\Users\\PCMR\\.nuget\\packages\\",
-      "outputPath": "D:\\Procesamiento\\procesamiento\\ProcesamientoCorrecto\\ProcesamientoCorrecto\\obj\\",
+      "projectPath": "C:\\Users\\alexr\\FCFM-TRABAJOS\\procesamiento\\ProcesamientoCorrecto\\ProcesamientoCorrecto\\ProcesamientoCorrecto.csproj",
+      "packagesPath": "C:\\Users\\alexr\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\alexr\\FCFM-TRABAJOS\\procesamiento\\ProcesamientoCorrecto\\ProcesamientoCorrecto\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\PCMR\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\alexr\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -395,6 +395,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[5.0.0, 5.0.0]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[5.0.17, 5.0.17]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[5.0.0, 5.0.0]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[5.0.0, 5.0.0]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
@@ -403,7 +421,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   },

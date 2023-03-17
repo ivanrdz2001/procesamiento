@@ -33,17 +33,12 @@ namespace ProcesamientoCorrecto
             System.Object[] ItemObject = new System.Object[8];
 
             ItemObject[0] = "NEGATIVO";
-            ItemObject[1] = "ROJO";
-            ItemObject[2] = "VERDE";
-            ItemObject[3] = "AZUL";
-            ItemObject[4] = "SEPIA";
-            ItemObject[5] = "3D";
-            ItemObject[6] = "PIXEL";
-            ItemObject[7] = "BLANCO/NEGRO";
+            //TODO: poner el resto de efectos
 
             comboEfectosImagen.Items.AddRange(ItemObject);
 
         }
+
 
         private void aboutMainForm_Click(object sender, EventArgs e)
         {
@@ -54,7 +49,10 @@ namespace ProcesamientoCorrecto
 
         private void comboEfectosImagen_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (this.comboEfectosImagen.SelectedItem == "NEGATIVO")
+            {
+                // do stuff
+            }
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
