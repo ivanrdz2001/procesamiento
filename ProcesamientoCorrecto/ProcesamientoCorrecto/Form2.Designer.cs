@@ -163,6 +163,7 @@ namespace ProcesamientoCorrecto
             this.picImage.TabIndex = 0;
             this.picImage.TabStop = false;
             this.picImage.Click += new System.EventHandler(this.picImage_Click);
+            this.picImage.Paint += new System.Windows.Forms.PaintEventHandler(this.picImage_Paint);
             // 
             // comboEfectosImagen
             // 

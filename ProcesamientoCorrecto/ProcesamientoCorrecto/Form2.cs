@@ -33,6 +33,15 @@ namespace ProcesamientoCorrecto
             System.Object[] ItemObject = new System.Object[8];
 
             ItemObject[0] = "NEGATIVO";
+            ItemObject[1] = "ROJO";
+            ItemObject[2] = "VERDE";
+            ItemObject[3] = "AZUL";
+            ItemObject[4] = "SEPIA";
+            ItemObject[5] = "3D";
+            ItemObject[6] = "PIXEL";
+            ItemObject[7] = "BLANCO/NEGRO";          
+            
+            //26:34
             //TODO: poner el resto de efectos
 
             comboEfectosImagen.Items.AddRange(ItemObject);
@@ -49,10 +58,7 @@ namespace ProcesamientoCorrecto
 
         private void comboEfectosImagen_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (this.comboEfectosImagen.SelectedItem == "NEGATIVO")
-            {
-                // do stuff
-            }
+
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -109,9 +115,41 @@ namespace ProcesamientoCorrecto
 
         private void SaveImage_Click(object sender, EventArgs e)
         {
-            if(saveFileDialog1.ShowDialog() == DialogResult.OK)
+
+            int x = 0;
+            int y = 0;
+            int a = 100;
+
+            int r = 0;
+            int g = 0;
+            int b = 0;
+
+
+            resultante = new Bitmap(original.Width, original.Height);
+
+            Color rColor = new Color();
+            Color oColor = new Color();
+
+            switch (comboEfectosImagen.Text)
             {
-                resultante.Save(saveFileDialog1.FileName,System.Drawing.Imaging.ImageFormat.Png);
+                case "NEGATIVO" :
+                    {
+                        for (x = 0; x < original.Width; x++)
+                        {
+                            for (y = 0; y < original.Height; y++)
+                            {
+                                oColor=original.GetPixel(x,y);
+
+                                rColor = Color.FromArgb(255-oColor.R,
+                                    255-oColor.G, 255-oColor.B);
+
+                                resultante.SetPixel(x,y,rColor);
+                            }
+                        }  
+                        
+                        this.Invalidate();
+                        break;
+                    }
             }
         }
 
@@ -119,9 +157,17 @@ namespace ProcesamientoCorrecto
 
 
 
-        private void picImage_Click(object sender, EventArgs e)
+            private void picImage_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void picImage_Paint(object sender, PaintEventArgs e)
+        {
+            if (resultante != null)
+            {
+                picImage.Image = resultante;
+            }
         }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
