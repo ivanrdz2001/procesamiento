@@ -53,7 +53,7 @@ namespace ProcesamientoCorrecto
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            Form3 detect = new Form3();
+            Deteccion detect = new Deteccion();
             detect.ShowDialog();
             this.Close();
         }

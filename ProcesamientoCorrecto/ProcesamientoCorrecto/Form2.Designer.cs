@@ -39,6 +39,7 @@ namespace ProcesamientoCorrecto
             this.panel2 = new System.Windows.Forms.Panel();
             this.resetMainButton = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.webcamBox = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.comboEfectosImagen = new System.Windows.Forms.ComboBox();
@@ -46,9 +47,17 @@ namespace ProcesamientoCorrecto
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+<<<<<<< Updated upstream
+=======
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.saveResult = new System.Windows.Forms.Button();
+>>>>>>> Stashed changes
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resetMainButton)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.webcamBox)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -77,7 +86,7 @@ namespace ProcesamientoCorrecto
             this.panel1.Controls.Add(this.loadImagePictureForm);
             this.panel1.Location = new System.Drawing.Point(0, 110);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(207, 451);
+            this.panel1.Size = new System.Drawing.Size(207, 507);
             this.panel1.TabIndex = 4;
             // 
             // Salir
@@ -85,7 +94,7 @@ namespace ProcesamientoCorrecto
             this.Salir.BackColor = System.Drawing.Color.PaleVioletRed;
             this.Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Salir.Font = new System.Drawing.Font("Coolvetica Rg", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Salir.Location = new System.Drawing.Point(10, 381);
+            this.Salir.Location = new System.Drawing.Point(3, 441);
             this.Salir.Name = "Salir";
             this.Salir.Size = new System.Drawing.Size(194, 55);
             this.Salir.TabIndex = 2;
@@ -129,13 +138,24 @@ namespace ProcesamientoCorrecto
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.webcamBox);
             this.groupBox1.Font = new System.Drawing.Font("Coolvetica Rg", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(881, 22);
+            this.groupBox1.Location = new System.Drawing.Point(816, 22);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(189, 171);
+            this.groupBox1.Size = new System.Drawing.Size(395, 235);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Histograma";
+            this.groupBox1.Text = "Camara web";
+            // 
+            // webcamBox
+            // 
+            this.webcamBox.Location = new System.Drawing.Point(44, 45);
+            this.webcamBox.Name = "webcamBox";
+            this.webcamBox.Size = new System.Drawing.Size(314, 166);
+            this.webcamBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.webcamBox.TabIndex = 0;
+            this.webcamBox.TabStop = false;
+            this.webcamBox.Click += new System.EventHandler(this.webcamBox_Click);
             // 
             // groupBox2
             // 
@@ -184,6 +204,7 @@ namespace ProcesamientoCorrecto
             this.camaraWebFoto.Size = new System.Drawing.Size(525, 30);
             this.camaraWebFoto.TabIndex = 9;
             this.camaraWebFoto.Text = "Elige una cámara";
+            this.camaraWebFoto.SelectedIndexChanged += new System.EventHandler(this.camaraWebFoto_SelectedIndexChanged);
             // 
             // button2
             // 
@@ -195,14 +216,14 @@ namespace ProcesamientoCorrecto
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(487, 71);
             this.button2.TabIndex = 11;
-            this.button2.Text = "Guardar foto";
+            this.button2.Text = "Cargar efecto";
             this.button2.UseVisualStyleBackColor = false;
             // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(902, 211);
+            this.pictureBox3.Location = new System.Drawing.Point(944, 276);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(148, 137);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -215,12 +236,35 @@ namespace ProcesamientoCorrecto
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Montserrat Black", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(857, 351);
+            this.label1.Location = new System.Drawing.Point(899, 416);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(245, 40);
             this.label1.TabIndex = 13;
             this.label1.Text = "Toma una foto";
             // 
+<<<<<<< Updated upstream
+=======
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "Imagenes PNG|*.png|Imagenes Bitmap|*.bmp|Imagenes Jpg|*.jpg";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
+            // saveResult
+            // 
+            this.saveResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.saveResult.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.saveResult.Font = new System.Drawing.Font("Montserrat Black", 17.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.saveResult.ForeColor = System.Drawing.Color.White;
+            this.saveResult.Location = new System.Drawing.Point(338, 552);
+            this.saveResult.Name = "saveResult";
+            this.saveResult.Size = new System.Drawing.Size(297, 60);
+            this.saveResult.TabIndex = 14;
+            this.saveResult.Text = "Guardar resultado";
+            this.saveResult.UseVisualStyleBackColor = false;
+            this.saveResult.Click += new System.EventHandler(this.saveResult_Click);
+            // 
+>>>>>>> Stashed changes
             // FormImage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -228,8 +272,9 @@ namespace ProcesamientoCorrecto
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(202)))), ((int)(((byte)(64)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1217, 558);
+            this.ClientSize = new System.Drawing.Size(1217, 618);
             this.ControlBox = false;
+            this.Controls.Add(this.saveResult);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.button2);
@@ -240,11 +285,14 @@ namespace ProcesamientoCorrecto
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "FormImage";
-            this.Text = "Form2";
+            this.Text = "Foto";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormImage_FormClosed);
             this.Load += new System.EventHandler(this.FormMenu_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.resetMainButton)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.webcamBox)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -269,5 +317,13 @@ namespace ProcesamientoCorrecto
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button Salir;
+<<<<<<< Updated upstream
+=======
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.PictureBox picImage;
+        private System.Windows.Forms.PictureBox webcamBox;
+        private System.Windows.Forms.Button saveResult;
+>>>>>>> Stashed changes
     }
 }
