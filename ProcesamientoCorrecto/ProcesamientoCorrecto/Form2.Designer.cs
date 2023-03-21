@@ -39,6 +39,7 @@ namespace ProcesamientoCorrecto
             this.panel2 = new System.Windows.Forms.Panel();
             this.resetMainButton = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cameraBox = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.picImage = new System.Windows.Forms.PictureBox();
             this.comboEfectosImagen = new System.Windows.Forms.ComboBox();
@@ -48,10 +49,12 @@ namespace ProcesamientoCorrecto
             this.label1 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.activarCamara = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resetMainButton)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cameraBox)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -80,7 +83,7 @@ namespace ProcesamientoCorrecto
             this.panel1.Controls.Add(this.loadImagePictureForm);
             this.panel1.Location = new System.Drawing.Point(0, 110);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(207, 451);
+            this.panel1.Size = new System.Drawing.Size(207, 454);
             this.panel1.TabIndex = 4;
             // 
             // Salir
@@ -88,9 +91,9 @@ namespace ProcesamientoCorrecto
             this.Salir.BackColor = System.Drawing.Color.PaleVioletRed;
             this.Salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Salir.Font = new System.Drawing.Font("Coolvetica Rg", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Salir.Location = new System.Drawing.Point(10, 381);
+            this.Salir.Location = new System.Drawing.Point(0, 376);
             this.Salir.Name = "Salir";
-            this.Salir.Size = new System.Drawing.Size(194, 55);
+            this.Salir.Size = new System.Drawing.Size(207, 55);
             this.Salir.TabIndex = 2;
             this.Salir.Text = "Salir";
             this.Salir.UseVisualStyleBackColor = false;
@@ -132,13 +135,22 @@ namespace ProcesamientoCorrecto
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.cameraBox);
             this.groupBox1.Font = new System.Drawing.Font("Coolvetica Rg", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(881, 22);
+            this.groupBox1.Location = new System.Drawing.Point(807, 22);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(189, 171);
+            this.groupBox1.Size = new System.Drawing.Size(385, 248);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Histograma";
+            // 
+            // cameraBox
+            // 
+            this.cameraBox.Location = new System.Drawing.Point(28, 34);
+            this.cameraBox.Name = "cameraBox";
+            this.cameraBox.Size = new System.Drawing.Size(334, 196);
+            this.cameraBox.TabIndex = 0;
+            this.cameraBox.TabStop = false;
             // 
             // groupBox2
             // 
@@ -155,7 +167,6 @@ namespace ProcesamientoCorrecto
             // picImage
             // 
             this.picImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.picImage.Image = ((System.Drawing.Image)(resources.GetObject("picImage.Image")));
             this.picImage.Location = new System.Drawing.Point(3, 36);
             this.picImage.Name = "picImage";
             this.picImage.Size = new System.Drawing.Size(519, 325);
@@ -200,7 +211,7 @@ namespace ProcesamientoCorrecto
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(487, 71);
             this.button2.TabIndex = 11;
-            this.button2.Text = "Guardar foto";
+            this.button2.Text = "Guardar resultado";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.SaveImage_Click);
             // 
@@ -208,7 +219,7 @@ namespace ProcesamientoCorrecto
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(902, 211);
+            this.pictureBox3.Location = new System.Drawing.Point(933, 361);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(148, 137);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -221,7 +232,7 @@ namespace ProcesamientoCorrecto
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Montserrat Black", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(857, 351);
+            this.label1.Location = new System.Drawing.Point(888, 501);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(245, 40);
             this.label1.TabIndex = 13;
@@ -233,13 +244,18 @@ namespace ProcesamientoCorrecto
             this.openFileDialog1.Filter = "Imagenes PNG|*.png|Imagenes Bitmap|*.bmp|Imagenes Jpg|*.jpg";
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
-            // menuStrip1
+            // activarCamara
             // 
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1217, 24);
-            this.menuStrip1.TabIndex = 14;
-            this.menuStrip1.Text = "menuStrip1";
+            this.activarCamara.BackColor = System.Drawing.Color.Crimson;
+            this.activarCamara.Font = new System.Drawing.Font("Montserrat Black", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.activarCamara.ForeColor = System.Drawing.Color.Cornsilk;
+            this.activarCamara.Location = new System.Drawing.Point(873, 276);
+            this.activarCamara.Name = "activarCamara";
+            this.activarCamara.Size = new System.Drawing.Size(272, 66);
+            this.activarCamara.TabIndex = 14;
+            this.activarCamara.Text = "Activar camara";
+            this.activarCamara.UseVisualStyleBackColor = false;
+            this.activarCamara.Click += new System.EventHandler(this.activarCamara_Click);
             // 
             // FormImage
             // 
@@ -248,8 +264,9 @@ namespace ProcesamientoCorrecto
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(202)))), ((int)(((byte)(64)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1217, 558);
+            this.ClientSize = new System.Drawing.Size(1217, 562);
             this.ControlBox = false;
+            this.Controls.Add(this.activarCamara);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.button2);
@@ -259,14 +276,14 @@ namespace ProcesamientoCorrecto
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormImage";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.FormMenu_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.resetMainButton)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cameraBox)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -293,7 +310,8 @@ namespace ProcesamientoCorrecto
         private System.Windows.Forms.Button Salir;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.PictureBox picImage;
+        private System.Windows.Forms.PictureBox cameraBox;
+        private System.Windows.Forms.Button activarCamara;
     }
 }

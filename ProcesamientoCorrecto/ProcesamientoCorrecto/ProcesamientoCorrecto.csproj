@@ -13,6 +13,7 @@
     <PackageReference Include="AForge.Video" Version="2.2.5" />
     <PackageReference Include="AForge.Video.DirectShow" Version="2.2.5" />
     <PackageReference Include="AForge.Vision" Version="2.2.5" />
+    <PackageReference Include="Emgu.CV" Version="4.6.0.5131" />
     <PackageReference Include="Font.Awesome" Version="5.15.4" />
     <PackageReference Include="FontAwesome.Sharp" Version="6.2.1" />
     <PackageReference Include="FontAwesome.Sharp.Pro" Version="6.2.1" />

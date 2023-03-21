@@ -29,25 +29,40 @@ namespace ProcesamientoCorrecto
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.Button activateCamara;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Salir = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.histogramImageForm = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Salir = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.resetMainButton = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.camaraWebFoto = new System.Windows.Forms.ComboBox();
-            this.comboEfectosImagen = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            activateCamara = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resetMainButton)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // activateCamara
+            // 
+            activateCamara.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            activateCamara.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            activateCamara.Font = new System.Drawing.Font("Coolvetica Rg", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            activateCamara.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            activateCamara.Location = new System.Drawing.Point(603, 430);
+            activateCamara.Name = "activateCamara";
+            activateCamara.Size = new System.Drawing.Size(207, 62);
+            activateCamara.TabIndex = 19;
+            activateCamara.Text = "Activar CÁMARA";
+            activateCamara.UseVisualStyleBackColor = false;
+            activateCamara.Click += new System.EventHandler(this.activateCamara_Click);
             // 
             // panel1
             // 
@@ -60,6 +75,29 @@ namespace ProcesamientoCorrecto
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(207, 505);
             this.panel1.TabIndex = 5;
+            // 
+            // histogramImageForm
+            // 
+            this.histogramImageForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.histogramImageForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.histogramImageForm.Font = new System.Drawing.Font("Coolvetica Rg", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.histogramImageForm.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.histogramImageForm.Location = new System.Drawing.Point(0, 27);
+            this.histogramImageForm.Name = "histogramImageForm";
+            this.histogramImageForm.Size = new System.Drawing.Size(207, 102);
+            this.histogramImageForm.TabIndex = 4;
+            this.histogramImageForm.Text = "Detectar personas";
+            this.histogramImageForm.UseVisualStyleBackColor = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Font = new System.Drawing.Font("Montserrat Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBox1.Location = new System.Drawing.Point(22, 181);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(170, 86);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Personas detectadas";
             // 
             // Salir
             // 
@@ -74,28 +112,15 @@ namespace ProcesamientoCorrecto
             this.Salir.UseVisualStyleBackColor = false;
             this.Salir.Click += new System.EventHandler(this.Salir_Click);
             // 
-            // groupBox1
+            // groupBox3
             // 
-            this.groupBox1.Font = new System.Drawing.Font("Montserrat Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(22, 181);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(170, 86);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Personas detectadas";
-            // 
-            // histogramImageForm
-            // 
-            this.histogramImageForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.histogramImageForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.histogramImageForm.Font = new System.Drawing.Font("Coolvetica Rg", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.histogramImageForm.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.histogramImageForm.Location = new System.Drawing.Point(0, 27);
-            this.histogramImageForm.Name = "histogramImageForm";
-            this.histogramImageForm.Size = new System.Drawing.Size(207, 102);
-            this.histogramImageForm.TabIndex = 4;
-            this.histogramImageForm.Text = "Detectar personas";
-            this.histogramImageForm.UseVisualStyleBackColor = false;
+            this.groupBox3.Font = new System.Drawing.Font("Montserrat Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBox3.Location = new System.Drawing.Point(8, 333);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(170, 94);
+            this.groupBox3.TabIndex = 6;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Personas en movimiento";
             // 
             // panel2
             // 
@@ -123,12 +148,13 @@ namespace ProcesamientoCorrecto
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Montserrat Black", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(485, 508);
+            this.button2.Location = new System.Drawing.Point(485, 510);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(487, 71);
             this.button2.TabIndex = 17;
             this.button2.Text = "Guardar foto";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // camaraWebFoto
             // 
@@ -136,23 +162,12 @@ namespace ProcesamientoCorrecto
             this.camaraWebFoto.Font = new System.Drawing.Font("Montserrat Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.camaraWebFoto.ForeColor = System.Drawing.Color.White;
             this.camaraWebFoto.FormattingEnabled = true;
-            this.camaraWebFoto.Location = new System.Drawing.Point(455, 455);
+            this.camaraWebFoto.Location = new System.Drawing.Point(455, 382);
             this.camaraWebFoto.Name = "camaraWebFoto";
-            this.camaraWebFoto.Size = new System.Drawing.Size(525, 30);
+            this.camaraWebFoto.Size = new System.Drawing.Size(553, 30);
             this.camaraWebFoto.TabIndex = 15;
             this.camaraWebFoto.Text = "Elige una cámara";
-            // 
-            // comboEfectosImagen
-            // 
-            this.comboEfectosImagen.BackColor = System.Drawing.Color.Crimson;
-            this.comboEfectosImagen.Font = new System.Drawing.Font("Montserrat Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.comboEfectosImagen.ForeColor = System.Drawing.Color.White;
-            this.comboEfectosImagen.FormattingEnabled = true;
-            this.comboEfectosImagen.Location = new System.Drawing.Point(455, 402);
-            this.comboEfectosImagen.Name = "comboEfectosImagen";
-            this.comboEfectosImagen.Size = new System.Drawing.Size(525, 30);
-            this.comboEfectosImagen.TabIndex = 14;
-            this.comboEfectosImagen.Text = "Elige un efecto";
+            this.camaraWebFoto.SelectedIndexChanged += new System.EventHandler(this.camaraWebFoto_SelectedIndexChanged);
             // 
             // groupBox2
             // 
@@ -168,23 +183,12 @@ namespace ProcesamientoCorrecto
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(30, 54);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(464, 282);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Font = new System.Drawing.Font("Montserrat Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox3.Location = new System.Drawing.Point(8, 333);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(170, 94);
-            this.groupBox3.TabIndex = 6;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Personas en movimiento";
             // 
             // Form3
             // 
@@ -195,9 +199,9 @@ namespace ProcesamientoCorrecto
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1308, 607);
             this.ControlBox = false;
+            this.Controls.Add(activateCamara);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.camaraWebFoto);
-            this.Controls.Add(this.comboEfectosImagen);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -222,7 +226,6 @@ namespace ProcesamientoCorrecto
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox camaraWebFoto;
-        private System.Windows.Forms.ComboBox comboEfectosImagen;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox3;
