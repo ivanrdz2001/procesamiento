@@ -149,6 +149,7 @@ namespace ProcesamientoCorrecto
             this.cameraBox.Location = new System.Drawing.Point(28, 34);
             this.cameraBox.Name = "cameraBox";
             this.cameraBox.Size = new System.Drawing.Size(334, 196);
+            this.cameraBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.cameraBox.TabIndex = 0;
             this.cameraBox.TabStop = false;
             // 

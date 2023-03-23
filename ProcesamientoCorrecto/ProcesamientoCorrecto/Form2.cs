@@ -39,16 +39,15 @@ namespace ProcesamientoCorrecto
             cargarDispositivos();
 
 
-            System.Object[] ItemObject = new System.Object[8];
+            System.Object[] ItemObject = new System.Object[7];
 
             ItemObject[0] = "NEGATIVO";
-            ItemObject[1] = "ROJO";
-            ItemObject[2] = "VERDE";
-            ItemObject[3] = "AZUL";
+            ItemObject[1] = "BLANCO/NEGRO";
+            ItemObject[2] = "DESENFOQUE";
+            ItemObject[3] = "BORDES OSCUROS";
             ItemObject[4] = "SEPIA";
-            ItemObject[5] = "3D";
+            ItemObject[5] = "ABERRACION CROMATICA";
             ItemObject[6] = "PIXEL";
-            ItemObject[7] = "BLANCO/NEGRO";          
             
             //26:34
             //TODO: poner el resto de efectos
@@ -164,7 +163,11 @@ namespace ProcesamientoCorrecto
 
         private void resetMainButton_Click_1(object sender, EventArgs e)
         {
+            FormMenu frm = new FormMenu();
 
+            frm.Show();
+
+            this.Hide();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

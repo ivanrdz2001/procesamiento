@@ -49,7 +49,7 @@ namespace ProcesamientoCorrecto
 
         private void Salir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void button1_Click(object sender, EventArgs e)
