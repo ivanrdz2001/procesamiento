@@ -39,9 +39,10 @@ namespace ProcesamientoCorrecto
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            this.Close();
+
             Form4 videoW = new Form4();
             videoW.ShowDialog();
-            this.Close();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -54,9 +55,10 @@ namespace ProcesamientoCorrecto
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
+            this.Hide();
+
             Form3 detect = new Form3();
             detect.ShowDialog();
-            this.Close();
         }
     }
 }

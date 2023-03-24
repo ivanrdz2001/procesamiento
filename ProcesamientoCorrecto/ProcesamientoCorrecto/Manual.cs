@@ -19,9 +19,16 @@ namespace ProcesamientoCorrecto
 
         private void menuMainForm_Click(object sender, EventArgs e)
         {
+            this.Hide();
+
             Form1 inicio = new Form1(); 
             inicio.ShowDialog();
-            this.Close();
+
+        }
+
+        private void Salir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

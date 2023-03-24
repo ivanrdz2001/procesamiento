@@ -132,6 +132,85 @@ namespace ProcesamientoCorrecto
                             this.Invalidate();
                             break;
                         }
+
+                    case "ABERRACION CROMATICA":
+                        {
+                            a = 15;
+                            resultante = new Bitmap(original.Width, original.Height);
+
+                            for (x = 0; x < original.Width; x++)
+                            {
+                                for(y = 0;y < original.Height; y++)
+                                {
+                                    g = original.GetPixel(x, y).G;
+                                    if (x + a < original.Width)
+                                    {
+                                        r = original.GetPixel(x + a, y).R;
+                                    }
+                                    else
+                                        r = 0;
+
+                                    if (x - a >= 0)
+                                    {
+                                        b = original.GetPixel(x - a, y).B;
+                                    }
+                                    else
+                                        b = 0;
+
+                                    resultante.SetPixel(x, y, Color.FromArgb(r, g, b));
+                                }
+
+                            }
+                            this.Invalidate();
+                            break;
+                        }
+
+                    case "PIXEL":
+                        {
+                            int mosaico = 30;
+                            int xm = 0;
+                            int ym = 0;
+                            int rs = 0;
+                            int gs = 0;
+                            int bs = 0;
+
+
+                            for (x = 0; x < original.Width - mosaico; x += mosaico)
+                            {
+                                for (y = 0; y < original.Height - mosaico; y += mosaico)
+                                {
+                                    rs = 0;
+                                    gs = 0;
+                                    bs = 0;
+                                    for (xm = x; xm < (x + mosaico); xm++)
+                                    {
+                                        for (ym = y; ym < (y + mosaico); ym++)
+                                        {
+                                            oColor = original.GetPixel(xm, ym);
+                                            rs += oColor.R;
+                                            gs += oColor.G;
+                                            bs += oColor.B;
+                                        }
+                                    }
+                                    r = rs / (mosaico * mosaico);
+                                    g = gs / (mosaico * mosaico);
+                                    b = bs / (mosaico * mosaico);
+                                    rColor = Color.FromArgb(r, g, b);
+                                    // Colocamos el color en resultante
+                                    for (xm = x; xm < (x + mosaico); xm++)
+                                    {
+                                        for (ym = y; ym < (y + mosaico); ym++)
+                                        {
+                                            resultante.SetPixel(xm, ym, rColor);
+                                        }
+
+                                    }
+                                }
+                            }
+                            this.Invalidate();
+                            break;
+                        }
+
                 }
 
             }

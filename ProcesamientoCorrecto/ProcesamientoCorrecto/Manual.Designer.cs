@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Manual));
             this.panelSideMenu = new System.Windows.Forms.Panel();
             this.Salir = new System.Windows.Forms.Button();
+            this.menuMainForm = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.resetMainButton = new System.Windows.Forms.PictureBox();
-            this.menuMainForm = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -73,6 +73,22 @@
             this.Salir.TabIndex = 1;
             this.Salir.Text = "Salir";
             this.Salir.UseVisualStyleBackColor = false;
+            this.Salir.Click += new System.EventHandler(this.Salir_Click);
+            // 
+            // menuMainForm
+            // 
+            this.menuMainForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.menuMainForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.menuMainForm.Font = new System.Drawing.Font("Coolvetica Rg", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.menuMainForm.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.menuMainForm.Location = new System.Drawing.Point(0, 178);
+            this.menuMainForm.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.menuMainForm.Name = "menuMainForm";
+            this.menuMainForm.Size = new System.Drawing.Size(258, 60);
+            this.menuMainForm.TabIndex = 1;
+            this.menuMainForm.Text = "Inicio";
+            this.menuMainForm.UseVisualStyleBackColor = false;
+            this.menuMainForm.Click += new System.EventHandler(this.menuMainForm_Click);
             // 
             // panel1
             // 
@@ -95,21 +111,6 @@
             this.resetMainButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.resetMainButton.TabIndex = 0;
             this.resetMainButton.TabStop = false;
-            // 
-            // menuMainForm
-            // 
-            this.menuMainForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.menuMainForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.menuMainForm.Font = new System.Drawing.Font("Coolvetica Rg", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.menuMainForm.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.menuMainForm.Location = new System.Drawing.Point(0, 178);
-            this.menuMainForm.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.menuMainForm.Name = "menuMainForm";
-            this.menuMainForm.Size = new System.Drawing.Size(258, 60);
-            this.menuMainForm.TabIndex = 1;
-            this.menuMainForm.Text = "Inicio";
-            this.menuMainForm.UseVisualStyleBackColor = false;
-            this.menuMainForm.Click += new System.EventHandler(this.menuMainForm_Click);
             // 
             // label1
             // 
@@ -219,6 +220,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1184, 612);
+            this.ControlBox = false;
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label4);

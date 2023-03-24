@@ -54,17 +54,20 @@ namespace ProcesamientoCorrecto
 
         private void button1_Click(object sender, EventArgs e)
         {
+            this.Hide();
 
+            Manual frm = new Manual();
+            frm.ShowDialog();
         }
 
         private void resetMainButton_Click(object sender, EventArgs e)
         {
-            Reset();
+           
         }
 
         private void Reset()
         {
-            throw new NotImplementedException();
+            
         }
 
         private void menuMainForm_Click(object sender, EventArgs e)

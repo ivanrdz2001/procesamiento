@@ -31,6 +31,7 @@ D:\FCFM - Trabajos\Procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\obj
 D:\FCFM - Trabajos\Procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\obj\Debug\net5.0-windows\ProcesamientoCorrecto.Form4.resources
 D:\FCFM - Trabajos\Procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\obj\Debug\net5.0-windows\refint\ProcesamientoCorrecto.dll
 D:\FCFM - Trabajos\Procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\obj\Debug\net5.0-windows\ProcesamientoCorrecto.FormImage.resources
+D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\obj\Debug\net5.0-windows\ProcesamientoCorrecto.dll
 D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\Debug\net5.0-windows\ProcesamientoCorrecto.exe
 D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\Debug\net5.0-windows\ProcesamientoCorrecto.deps.json
 D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\Debug\net5.0-windows\ProcesamientoCorrecto.runtimeconfig.json
@@ -43,6 +44,7 @@ D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\D
 D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\Debug\net5.0-windows\AForge.Video.dll
 D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\Debug\net5.0-windows\AForge.Video.DirectShow.dll
 D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\Debug\net5.0-windows\AForge.Vision.dll
+D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\Debug\net5.0-windows\Emgu.CV.dll
 D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\Debug\net5.0-windows\FontAwesome.Sharp.dll
 D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\Debug\net5.0-windows\FontAwesome.Sharp.Pro.dll
 D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\Debug\net5.0-windows\Material.Icons.dll
@@ -52,6 +54,7 @@ D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\obj\D
 D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\obj\Debug\net5.0-windows\ProcesamientoCorrecto.Form3.resources
 D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\obj\Debug\net5.0-windows\ProcesamientoCorrecto.Form4.resources
 D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\obj\Debug\net5.0-windows\ProcesamientoCorrecto.FormMenu.resources
+D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\obj\Debug\net5.0-windows\ProcesamientoCorrecto.Manual.resources
 D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\obj\Debug\net5.0-windows\ProcesamientoCorrecto.Properties.Resources.resources
 D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\obj\Debug\net5.0-windows\ProcesamientoCorrecto.csproj.GenerateResource.cache
 D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\obj\Debug\net5.0-windows\ProcesamientoCorrecto.GeneratedMSBuildEditorConfig.editorconfig
@@ -59,10 +62,7 @@ D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\obj\D
 D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\obj\Debug\net5.0-windows\ProcesamientoCorrecto.AssemblyInfo.cs
 D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\obj\Debug\net5.0-windows\ProcesamientoCorrecto.csproj.CoreCompileInputs.cache
 D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\obj\Debug\net5.0-windows\ProcesamientoCorrecto.csproj.CopyComplete
-D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\obj\Debug\net5.0-windows\ProcesamientoCorrecto.dll
 D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\obj\Debug\net5.0-windows\refint\ProcesamientoCorrecto.dll
 D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\obj\Debug\net5.0-windows\ProcesamientoCorrecto.pdb
 D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\obj\Debug\net5.0-windows\ProcesamientoCorrecto.genruntimeconfig.cache
 D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\obj\Debug\net5.0-windows\ref\ProcesamientoCorrecto.dll
-D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\obj\Debug\net5.0-windows\ProcesamientoCorrecto.Manual.resources
-D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\Debug\net5.0-windows\Emgu.CV.dll
