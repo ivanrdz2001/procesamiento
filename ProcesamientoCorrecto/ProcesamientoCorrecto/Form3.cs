@@ -10,7 +10,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Emgu.CV;
 using Emgu.CV.Structure;
+using Emgu.CV.Face;
+using Emgu.CV.CvEnum;
 using AForge.Video;
+using FaceRecognition;
 
 namespace ProcesamientoCorrecto
 {
@@ -20,17 +23,16 @@ namespace ProcesamientoCorrecto
         private VideoCaptureDevice MiWebCam = null;
         private bool HayDispositivos;
         static readonly CascadeClassifier cascadeClassifier = new CascadeClassifier("haarcascade_frontalface_alt_tree.xml"); // Para reconocer el rostro
-
         public Form3()
         {
             InitializeComponent();
             cargarDispositivos();
 
         }
+        FaceRec facerec = new FaceRec();
         private void Capturado(object sender, NewFrameEventArgs eventArgs)
         {
             Bitmap Imagen = (Bitmap)eventArgs.Frame.Clone();
-            pictureBox1.Image = Imagen;
         }
 
         public void cargarDispositivos()
@@ -122,27 +124,12 @@ namespace ProcesamientoCorrecto
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (pictureBox1.Image != null)
-            {
-                SaveFileDialog sfd = new SaveFileDialog
-                {
-                    AddExtension = true,
-                    FileName = "foto.jpeg",
-                    Filter = "JPEG File ( *.jpg )|*.jpg|Enhanced Metafile (*.emf )|*.emf|Portable Network Graphic ( *.png )|*.png",
-                    FilterIndex = 1,
-                    Title = "Guardar Imagen",
-                };
-                sfd.InitialDirectory = @"..\CyberMorph";
 
-                if (sfd.ShowDialog() == DialogResult.OK)
-                {
-                    pictureBox1.Image.Save(sfd.FileName);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Importa una imagen", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
+        }
+
+        private void detectarRostros_Click(object sender, EventArgs e)
+        {
+            facerec.openCamera(pictureBox1,pictureBox2);
         }
     }
 }
