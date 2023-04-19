@@ -36,6 +36,9 @@
     <Reference Include="Emgu.Util">
       <HintPath>bin\Debug\Emgu.Util.dll</HintPath>
     </Reference>
+    <Reference Include="FaceRecognition">
+      <HintPath>bin\Debug\FaceRecognition.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>

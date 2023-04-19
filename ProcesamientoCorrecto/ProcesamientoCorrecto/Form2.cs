@@ -211,10 +211,74 @@ namespace ProcesamientoCorrecto
                             break;
                         }
 
+                    case "DESENFOQUE":
+                        {
+
+                        }
+                        this.Invalidate();
+                        break;
                 }
 
             }
 
+        }
+
+        private void Convolucion()
+        {
+            int x = 0;
+            int y= 0;
+            int a = 0;
+            int b = 0;
+            Color oColor;
+
+            int sumaR = 0;
+            int sumaG = 0;
+            int sumaB = 0;
+
+            for(x=1;x<original.Width-1;x++)
+            {
+                for(y=1;y<original.Height-1;y++)
+                {
+                    sumaR = 0;
+                    sumaG=0;
+                    sumaB= 0;
+                    for (a = -1; a < 2; a++)
+                    {
+                        for (b = -1; b < 2; b++)
+                        {
+                            oColor = original.GetPixel(x+a, y+b);
+
+                            sumaR = sumaR + (oColor.R * conv3x3[a+1,b+1]);
+                            sumaG = sumaG + (oColor.G * conv3x3[a + 1, b + 1]);
+                            sumaB = sumaB + (oColor.B * conv3x3[a + 1, b + 1]);
+
+                        }
+                    }
+
+                    sumaR = (sumaR / factor) + offset;
+                    sumaG = (sumaG / factor) + offset;
+                    sumaB = (sumaB / factor) + offset;
+
+                    if(sumaR>255)
+                    {
+                        sumaR = 255;
+                    }else if(sumaR<0) 
+                        sumaR=0;
+
+                    if (sumaG > 255)
+                    {
+                        sumaG = 255;
+                    }
+                    else if (sumaG < 0)
+                        sumaG = 0;
+
+                    if (sumaB > 255)
+                        sumaB = 255;
+                    else if (sumaB<0) sumaB=0;
+
+                    resultante.SetPixel(x,y,Color.FromArgb(sumaR,sumaG,sumaB));
+                }
+            }
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
