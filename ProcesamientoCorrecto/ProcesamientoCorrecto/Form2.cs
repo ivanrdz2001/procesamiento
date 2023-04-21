@@ -214,6 +214,15 @@ namespace ProcesamientoCorrecto
                     case "DESENFOQUE":
                         {
 
+                            conv3x3 = new int[,]
+                            {
+                                {0,-2,0 },{-2,11,-2},{0,-2,0}
+                            };
+
+                            factor = 5;
+                            offset= 96;
+
+                            Convolucion();
                         }
                         this.Invalidate();
                         break;

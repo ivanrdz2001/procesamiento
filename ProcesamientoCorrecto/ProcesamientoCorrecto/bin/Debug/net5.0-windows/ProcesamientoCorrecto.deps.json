@@ -18,7 +18,12 @@
           "Font.Awesome": "5.15.4",
           "FontAwesome.Sharp": "6.2.1",
           "FontAwesome.Sharp.Pro": "6.2.1",
-          "Material.Icons": "1.1.35"
+          "Material.Icons": "1.1.35",
+          "Emgu.CV.GPU": "2.2.1.1150",
+          "Emgu.CV.ML": "2.2.1.1150",
+          "Emgu.CV.UI": "2.2.1.1150",
+          "Emgu.Util": "2.2.1.1150",
+          "FaceRecognition": "1.0.0.0"
         },
         "runtime": {
           "ProcesamientoCorrecto.dll": {}
@@ -253,6 +258,46 @@
           "Microsoft.NETCore.Targets": "1.1.3",
           "System.Runtime": "4.3.1"
         }
+      },
+      "Emgu.CV.GPU/2.2.1.1150": {
+        "runtime": {
+          "Emgu.CV.GPU.dll": {
+            "assemblyVersion": "2.2.1.1150",
+            "fileVersion": "2.2.1.1150"
+          }
+        }
+      },
+      "Emgu.CV.ML/2.2.1.1150": {
+        "runtime": {
+          "Emgu.CV.ML.dll": {
+            "assemblyVersion": "2.2.1.1150",
+            "fileVersion": "2.2.1.1150"
+          }
+        }
+      },
+      "Emgu.CV.UI/2.2.1.1150": {
+        "runtime": {
+          "Emgu.CV.UI.dll": {
+            "assemblyVersion": "2.2.1.1150",
+            "fileVersion": "2.2.1.1150"
+          }
+        }
+      },
+      "Emgu.Util/2.2.1.1150": {
+        "runtime": {
+          "Emgu.Util.dll": {
+            "assemblyVersion": "2.2.1.1150",
+            "fileVersion": "2.2.1.1150"
+          }
+        }
+      },
+      "FaceRecognition/1.0.0.0": {
+        "runtime": {
+          "FaceRecognition.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -464,6 +509,31 @@
       "sha512": "sha512-LbSxKEdOUhVe8BezB/9uOGGppt+nZf6e1VFyw6v3DN6lqitm0OSn2uXMOdtP0M3W4iMcqcivm2J6UgqiwwnXiA==",
       "path": "system.threading.tasks/4.3.0",
       "hashPath": "system.threading.tasks.4.3.0.nupkg.sha512"
+    },
+    "Emgu.CV.GPU/2.2.1.1150": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Emgu.CV.ML/2.2.1.1150": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Emgu.CV.UI/2.2.1.1150": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Emgu.Util/2.2.1.1150": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FaceRecognition/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

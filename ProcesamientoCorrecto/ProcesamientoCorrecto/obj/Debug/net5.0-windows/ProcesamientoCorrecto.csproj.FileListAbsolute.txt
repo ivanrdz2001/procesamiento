@@ -66,3 +66,10 @@ D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\obj\D
 D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\obj\Debug\net5.0-windows\ProcesamientoCorrecto.pdb
 D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\obj\Debug\net5.0-windows\ProcesamientoCorrecto.genruntimeconfig.cache
 D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\obj\Debug\net5.0-windows\ref\ProcesamientoCorrecto.dll
+D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\Debug\net5.0-windows\Emgu.CV.GPU.dll
+D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\Debug\net5.0-windows\Emgu.CV.ML.dll
+D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\Debug\net5.0-windows\Emgu.CV.UI.dll
+D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\Debug\net5.0-windows\Emgu.Util.dll
+D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\Debug\net5.0-windows\FaceRecognition.dll
+D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\Debug\net5.0-windows\Emgu.CV.UI.xml
+D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\Debug\net5.0-windows\Emgu.Util.xml
