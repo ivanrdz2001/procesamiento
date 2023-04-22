@@ -22,6 +22,14 @@ namespace ProcesamientoCorrecto
         private int factor;
         private int offset;
 
+        int x = 0;
+        int y = 0;
+        int a = 100;
+
+        int r = 0;
+        int g = 0;
+        int b = 0;
+
         private bool HayDispositivos;
         private FilterInfoCollection MyDispositivos;
         private VideoCaptureDevice MiWebCam = null;
@@ -39,7 +47,7 @@ namespace ProcesamientoCorrecto
             cargarDispositivos();
 
 
-            System.Object[] ItemObject = new System.Object[7];
+            System.Object[] ItemObject = new System.Object[8];
 
             ItemObject[0] = "NEGATIVO";
             ItemObject[1] = "BLANCO/NEGRO";
@@ -48,7 +56,8 @@ namespace ProcesamientoCorrecto
             ItemObject[4] = "SEPIA";
             ItemObject[5] = "ABERRACION CROMATICA";
             ItemObject[6] = "PIXEL";
-            
+            ItemObject[7] = "MEXICO EN BREAKING BAD";
+
             //26:34
             //TODO: poner el resto de efectos
 
@@ -97,13 +106,7 @@ namespace ProcesamientoCorrecto
 
         private void comboEfectosImagen_SelectedIndexChanged(object sender, EventArgs e)
         {
-            int x = 0;
-            int y = 0;
-            int a = 100;
 
-            int r = 0;
-            int g = 0;
-            int b = 0; 
 
             if (picImage.Image!=null)
             {
@@ -211,20 +214,51 @@ namespace ProcesamientoCorrecto
                             break;
                         }
 
-                    case "DESENFOQUE":
+                    case "BORDES OSCUROS":
                         {
-
-                            conv3x3 = new int[,]
-                            {
-                                {0,-2,0 },{-2,11,-2},{0,-2,0}
-                            };
-
-                            factor = 5;
-                            offset= 96;
-
-                            Convolucion();
+                            bordes();
                         }
                         this.Invalidate();
+                    break;
+
+                    case "BLANCO/NEGRO":
+                        {
+                            blackandwhite(oColor, rColor);
+
+                        }
+                        break;
+
+                    case "SEPIA":
+                        {
+
+                        }break;
+
+                    case "MEXICO EN BREAKING BAD":
+                        {
+                            double rc = 255 / 255.0;
+                            double gc = 255 / 255.0;
+                            double bc = 0 / 255.0;
+
+                            Color miColor = new Color();
+
+                            blackandwhite(oColor, rColor);
+
+                            for(x=0;x<original.Width;x++)
+                            {
+                                for(y=0;y<original.Height;y++)
+                                {
+                                    miColor = resultante.GetPixel(x,y);
+
+                                    r=(int)(miColor.R*rc);
+                                    g=(int)(miColor.G*gc);
+                                    b=(int)(miColor.B*bc);
+
+                                    resultante.SetPixel(x,y,Color.FromArgb(r,g,b));
+                                }
+                            }
+                            this.Invalidate();
+
+                        }
                         break;
                 }
 
@@ -232,6 +266,23 @@ namespace ProcesamientoCorrecto
 
         }
 
+        private void blackandwhite(Color oColor,Color rColor)
+        {
+            float gb = 0;
+            for (x = 0; x < original.Width; x++)
+            {
+                for (y = 0; y < original.Height; y++)
+                {
+                    oColor = original.GetPixel(x, y);
+
+                    gb = oColor.R * 0.299f + oColor.G * 0.587f + oColor.B * 0.114f;
+
+                    rColor = Color.FromArgb((int)gb, (int)gb, (int)gb);
+
+                    resultante.SetPixel(x, y, rColor);
+                }
+            }
+        }
         private void Convolucion()
         {
             int x = 0;
@@ -290,6 +341,49 @@ namespace ProcesamientoCorrecto
             }
         }
 
+        private void bordes()
+        {
+            int x=0, y=0;
+            resultante = new Bitmap(original.Width,original.Height);
+
+            int a=0, b=0;
+            int absDif = 0;
+            int maxDif = 0;
+            int diferencia = 0;
+
+            for(x=1;x<original.Width;x++) {
+                for(y=1;y<original.Height;y++)
+                {
+                    maxDif = 0;
+
+                    //encontramos la maxima diferencia con los vecinos
+                    for (a = -1; a <= 1; a++)
+                    {
+                        for (b = -1; b <= 1; b++)
+                        {
+                            diferencia = original.GetPixel(x, y).R - original.GetPixel(x + a, y + b).R;
+                            absDif= Math.Abs(diferencia);
+
+                            if(absDif>maxDif)
+                            {
+                                maxDif = absDif;
+                            }
+                        }
+                    }
+
+                    if (maxDif > 16)
+                    {
+                        maxDif = 255;
+                    }
+                    else
+                    {
+                        maxDif = 0;
+                    }
+                    resultante.SetPixel(x,y,Color.FromArgb(maxDif,maxDif,maxDif));
+                }
+            }
+            this.Invalidate();
+        }
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             SaveFileDialog sfd = new SaveFileDialog
