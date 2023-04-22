@@ -139,16 +139,16 @@ namespace ProcesamientoCorrecto
             this.groupBox1.Font = new System.Drawing.Font("Coolvetica Rg", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.Location = new System.Drawing.Point(807, 22);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(385, 248);
+            this.groupBox1.Size = new System.Drawing.Size(238, 190);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Histograma";
+            this.groupBox1.Text = "Webcam";
             // 
             // cameraBox
             // 
             this.cameraBox.Location = new System.Drawing.Point(28, 34);
             this.cameraBox.Name = "cameraBox";
-            this.cameraBox.Size = new System.Drawing.Size(334, 196);
+            this.cameraBox.Size = new System.Drawing.Size(190, 131);
             this.cameraBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.cameraBox.TabIndex = 0;
             this.cameraBox.TabStop = false;
@@ -220,7 +220,7 @@ namespace ProcesamientoCorrecto
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(933, 361);
+            this.pictureBox3.Location = new System.Drawing.Point(835, 322);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(148, 137);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -233,7 +233,7 @@ namespace ProcesamientoCorrecto
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Montserrat Black", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(888, 501);
+            this.label1.Location = new System.Drawing.Point(790, 462);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(245, 40);
             this.label1.TabIndex = 13;
@@ -250,7 +250,7 @@ namespace ProcesamientoCorrecto
             this.activarCamara.BackColor = System.Drawing.Color.Crimson;
             this.activarCamara.Font = new System.Drawing.Font("Montserrat Black", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.activarCamara.ForeColor = System.Drawing.Color.Cornsilk;
-            this.activarCamara.Location = new System.Drawing.Point(873, 276);
+            this.activarCamara.Location = new System.Drawing.Point(786, 228);
             this.activarCamara.Name = "activarCamara";
             this.activarCamara.Size = new System.Drawing.Size(272, 66);
             this.activarCamara.TabIndex = 14;
@@ -265,7 +265,7 @@ namespace ProcesamientoCorrecto
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(202)))), ((int)(((byte)(64)))));
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1217, 562);
+            this.ClientSize = new System.Drawing.Size(1083, 562);
             this.ControlBox = false;
             this.Controls.Add(this.activarCamara);
             this.Controls.Add(this.label1);

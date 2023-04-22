@@ -16,6 +16,9 @@
     <Compile Update="Form5.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Histograma.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Manual.cs">
       <SubType>Form</SubType>
     </Compile>

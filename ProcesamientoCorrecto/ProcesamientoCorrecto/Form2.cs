@@ -231,6 +231,49 @@ namespace ProcesamientoCorrecto
                     case "SEPIA":
                         {
 
+
+                            for (x = 0; x < original.Width; x++)
+                            {
+                                for (y = 0; y < original.Height; y++)
+                                {
+
+                                    oColor = original.GetPixel(x, y);
+                                    a = oColor.A;
+                                    r = oColor.R;
+                                    g = oColor.G;
+                                    b = oColor.B;
+                                    int tr = (int)(0.393 * r + 0.769 * g + 0.189 * b);
+                                    int tg = (int)(0.349 * r + 0.686 * g + 0.168 * b);
+                                    int tb = (int)(0.272 * r + 0.534 * g + 0.131 * b);
+                                    if (tr > 255)
+                                    {
+                                        r = 255;
+                                    }
+                                    else
+                                        r = tr;
+                                    if (tg > 255)
+                                    {
+                                        g = 255;
+                                    }
+                                    else
+                                        g = tg;
+                                    if (tb > 255)
+                                    {
+                                        b = 255;
+                                    }
+                                    else
+                                        b = tb;
+                                    rColor = Color.FromArgb(a, r, g, b);
+                                    // Colocamos el color en resultante
+                                    resultante.SetPixel(x, y, rColor);
+                                }
+                            }
+                        }
+                        break;
+
+                    case "DESENFOQUE":
+                        {
+
                         }break;
 
                     case "MEXICO EN BREAKING BAD":
