@@ -73,3 +73,4 @@ D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\D
 D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\Debug\net5.0-windows\FaceRecognition.dll
 D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\Debug\net5.0-windows\Emgu.CV.UI.xml
 D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\Debug\net5.0-windows\Emgu.Util.xml
+D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\obj\Debug\net5.0-windows\ProcesamientoCorrecto.Histograma.resources

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xaml;
 using AForge.Video;
 using AForge.Video.DirectShow;
 
@@ -214,12 +215,7 @@ namespace ProcesamientoCorrecto
                             break;
                         }
 
-                    case "BORDES OSCUROS":
-                        {
-                            bordes();
-                        }
-                        this.Invalidate();
-                    break;
+
 
                     case "BLANCO/NEGRO":
                         {
@@ -230,7 +226,6 @@ namespace ProcesamientoCorrecto
 
                     case "SEPIA":
                         {
-
 
                             for (x = 0; x < original.Width; x++)
                             {
@@ -274,6 +269,7 @@ namespace ProcesamientoCorrecto
                     case "DESENFOQUE":
                         {
 
+
                         }break;
 
                     case "MEXICO EN BREAKING BAD":
@@ -309,6 +305,8 @@ namespace ProcesamientoCorrecto
 
         }
 
+
+
         private void blackandwhite(Color oColor,Color rColor)
         {
             float gb = 0;
@@ -326,107 +324,15 @@ namespace ProcesamientoCorrecto
                 }
             }
         }
-        private void Convolucion()
+
+        private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {
-            int x = 0;
-            int y= 0;
-            int a = 0;
-            int b = 0;
-            Color oColor;
-
-            int sumaR = 0;
-            int sumaG = 0;
-            int sumaB = 0;
-
-            for(x=1;x<original.Width-1;x++)
+            if (MiWebCam.IsRunning)
             {
-                for(y=1;y<original.Height-1;y++)
-                {
-                    sumaR = 0;
-                    sumaG=0;
-                    sumaB= 0;
-                    for (a = -1; a < 2; a++)
-                    {
-                        for (b = -1; b < 2; b++)
-                        {
-                            oColor = original.GetPixel(x+a, y+b);
-
-                            sumaR = sumaR + (oColor.R * conv3x3[a+1,b+1]);
-                            sumaG = sumaG + (oColor.G * conv3x3[a + 1, b + 1]);
-                            sumaB = sumaB + (oColor.B * conv3x3[a + 1, b + 1]);
-
-                        }
-                    }
-
-                    sumaR = (sumaR / factor) + offset;
-                    sumaG = (sumaG / factor) + offset;
-                    sumaB = (sumaB / factor) + offset;
-
-                    if(sumaR>255)
-                    {
-                        sumaR = 255;
-                    }else if(sumaR<0) 
-                        sumaR=0;
-
-                    if (sumaG > 255)
-                    {
-                        sumaG = 255;
-                    }
-                    else if (sumaG < 0)
-                        sumaG = 0;
-
-                    if (sumaB > 255)
-                        sumaB = 255;
-                    else if (sumaB<0) sumaB=0;
-
-                    resultante.SetPixel(x,y,Color.FromArgb(sumaR,sumaG,sumaB));
-                }
+                MiWebCam.Stop();
             }
         }
 
-        private void bordes()
-        {
-            int x=0, y=0;
-            resultante = new Bitmap(original.Width,original.Height);
-
-            int a=0, b=0;
-            int absDif = 0;
-            int maxDif = 0;
-            int diferencia = 0;
-
-            for(x=1;x<original.Width;x++) {
-                for(y=1;y<original.Height;y++)
-                {
-                    maxDif = 0;
-
-                    //encontramos la maxima diferencia con los vecinos
-                    for (a = -1; a <= 1; a++)
-                    {
-                        for (b = -1; b <= 1; b++)
-                        {
-                            diferencia = original.GetPixel(x, y).R - original.GetPixel(x + a, y + b).R;
-                            absDif= Math.Abs(diferencia);
-
-                            if(absDif>maxDif)
-                            {
-                                maxDif = absDif;
-                            }
-                        }
-                    }
-
-                    if (maxDif > 16)
-                    {
-                        maxDif = 255;
-                    }
-                    else
-                    {
-                        maxDif = 0;
-                    }
-                    resultante.SetPixel(x,y,Color.FromArgb(maxDif,maxDif,maxDif));
-                }
-            }
-            this.Invalidate();
-        }
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             SaveFileDialog sfd = new SaveFileDialog
@@ -561,7 +467,74 @@ namespace ProcesamientoCorrecto
 
         }
 
+        public void BW_Histogram()
+        {
 
+            if (picImage.Image != null)
+            {
+                Color rColor = new Color();
+                Color oColor = new Color();
+
+                float gb = 0;
+                for (x = 0; x < original.Width; x++)
+                {
+                    for (y = 0; y < original.Height; y++)
+                    {
+                        oColor = original.GetPixel(x, y);
+
+                        gb = oColor.R * 0.299f + oColor.G * 0.587f + oColor.B * 0.114f;
+
+                        rColor = Color.FromArgb((int)gb, (int)gb, (int)gb);
+
+                        resultante.SetPixel(x, y, rColor);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Importa una imagen", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                hayImagen = false;
+            }
+
+
+        }
+
+        private void histogramImageForm_Click(object sender, EventArgs e)
+        {
+            BW_Histogram();
+
+            if(picImage.Image != null)
+            {
+                int x = 0; int y = 0;
+                Color rColor = new Color();
+
+                for (x = 0; x < original.Width; x++)
+                {
+                    for (y = 0; y < original.Height; y++)
+                    {
+                        rColor = resultante.GetPixel(x, y);
+                        histograma[rColor.R]++;
+                    }
+                }
+
+
+                int[] hs = new int[256];
+                int n = 0;
+                hs[0] = (histograma[0] + histograma[1]) / 2;
+                hs[255] = (histograma[255] + histograma[254]) / 2;
+
+                for (n = 1; n < 254; n++)
+                {
+                    hs[n] = (histograma[n-1]+ histograma[n] + histograma[n+1]) /3;
+                }
+
+                Histograma hsfrom = new Histograma(hs);
+
+                hsfrom.Show();
+            }
+
+
+        }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {

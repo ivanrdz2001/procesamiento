@@ -73,7 +73,7 @@
           "lib/AForge.Vision.dll": {}
         }
       },
-      "Emgu.CV/4.6.0.5131": {
+      "Emgu.CV/4.7.0.5276": {
         "type": "package",
         "dependencies": {
           "System.Drawing.Primitives": "4.3.0",
@@ -461,16 +461,16 @@
         "lib/AForge.Vision.xml"
       ]
     },
-    "Emgu.CV/4.6.0.5131": {
-      "sha512": "pRtYFTe+IZBoxm79cfkAS2QHnmLiz6upyKJNUnxUyVrOlw+QoLL7lx1siXCruvOVU5wkxCqOCBYDHnDNBSURsQ==",
+    "Emgu.CV/4.7.0.5276": {
+      "sha512": "7Tjxkw57JyOyoUHIcnVzAIgCPRSBod9uq/N4gYS0HX9Qrf6OBX3+ePMSLNj1P1/4o5FW7Wz8NqptVGlIbqovOA==",
       "type": "package",
-      "path": "emgu.cv/4.6.0.5131",
+      "path": "emgu.cv/4.7.0.5276",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.txt",
         "docs/README.md",
-        "emgu.cv.4.6.0.5131.nupkg.sha512",
+        "emgu.cv.4.7.0.5276.nupkg.sha512",
         "emgu.cv.nuspec",
         "icon.png",
         "lib/net6.0-ios11.0/Emgu.CV.dll",
@@ -1608,7 +1608,7 @@
       "AForge.Video >= 2.2.5",
       "AForge.Video.DirectShow >= 2.2.5",
       "AForge.Vision >= 2.2.5",
-      "Emgu.CV >= 4.6.0.5131",
+      "Emgu.CV >= 4.7.0.5276",
       "Font.Awesome >= 5.15.4",
       "FontAwesome.Sharp >= 6.2.1",
       "FontAwesome.Sharp.Pro >= 6.2.1",
@@ -1680,7 +1680,7 @@
           },
           "Emgu.CV": {
             "target": "Package",
-            "version": "[4.6.0.5131, )"
+            "version": "[4.7.0.5276, )"
           },
           "Font.Awesome": {
             "target": "Package",

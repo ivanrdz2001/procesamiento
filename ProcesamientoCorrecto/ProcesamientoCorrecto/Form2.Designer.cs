@@ -111,6 +111,7 @@ namespace ProcesamientoCorrecto
             this.histogramImageForm.TabIndex = 4;
             this.histogramImageForm.Text = "Ver histograma";
             this.histogramImageForm.UseVisualStyleBackColor = false;
+            this.histogramImageForm.Click += new System.EventHandler(this.histogramImageForm_Click);
             // 
             // panel2
             // 
