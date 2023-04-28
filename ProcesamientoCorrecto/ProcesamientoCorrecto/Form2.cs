@@ -100,8 +100,6 @@ namespace ProcesamientoCorrecto
             {
                 MiWebCam.SignalToStop();
                 MiWebCam = null;
-
-
             }
         }
 

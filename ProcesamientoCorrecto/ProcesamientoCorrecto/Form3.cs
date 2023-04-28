@@ -32,7 +32,7 @@ namespace ProcesamientoCorrecto
             InitializeComponent();
 
         }
-        FaceRec facerec = new FaceRec();
+        //FaceRec facerec = new FaceRec();
         private void Capturado(object sender, NewFrameEventArgs eventArgs)
         {
             Bitmap Imagen = (Bitmap)eventArgs.Frame.Clone();
@@ -163,9 +163,16 @@ namespace ProcesamientoCorrecto
 
         private void detectarRostros_Click(object sender, EventArgs e)
         {
-            MiWebCam = new VideoCaptureDevice(MyDispositivos[camaraWebFoto.SelectedIndex].MonikerString);
-            MiWebCam.NewFrame += Device_NewFrame;
-            MiWebCam.Start();
+            CerrarWebCam();
+
+            int i = camaraWebFoto.SelectedIndex;
+            if (i != -1)
+            {
+                MiWebCam = new VideoCaptureDevice(MyDispositivos[camaraWebFoto.SelectedIndex].MonikerString);
+                MiWebCam.NewFrame += Device_NewFrame;
+                MiWebCam.Start();
+            }
+
         }
 
         private void Form3_FormClosing(object sender, FormClosingEventArgs e)

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "bcSpXJb9NUsQsA/6fTSmTgxmIv/9JaHa0ewiCtqUIeRw7GJq1lLl9uGatiljERUH0k8SUS8pSd98STh0zh0msQ==",
+  "dgSpecHash": "EuVjiS0w4krJhOizYJlAqzp2QokTE7wNkDv0cdfqhaHXlEbQ7XSU+HnwLkJ6lcBKiebbLe/db81HxfPgnSpTjw==",
   "success": true,
   "projectFilePath": "D:\\Procesamiento\\procesamiento\\ProcesamientoCorrecto\\ProcesamientoCorrecto\\ProcesamientoCorrecto.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,10 @@
     "C:\\Users\\PCMR\\.nuget\\packages\\aforge.video.directshow\\2.2.5\\aforge.video.directshow.2.2.5.nupkg.sha512",
     "C:\\Users\\PCMR\\.nuget\\packages\\aforge.vision\\2.2.5\\aforge.vision.2.2.5.nupkg.sha512",
     "C:\\Users\\PCMR\\.nuget\\packages\\emgu.cv\\4.7.0.5276\\emgu.cv.4.7.0.5276.nupkg.sha512",
+    "C:\\Users\\PCMR\\.nuget\\packages\\emgu.cv.runtime.windows\\4.7.0.5276\\emgu.cv.runtime.windows.4.7.0.5276.nupkg.sha512",
+    "C:\\Users\\PCMR\\.nuget\\packages\\emgu.runtime.windows.msvc.rt.arm64\\19.35.32217.1\\emgu.runtime.windows.msvc.rt.arm64.19.35.32217.1.nupkg.sha512",
+    "C:\\Users\\PCMR\\.nuget\\packages\\emgu.runtime.windows.msvc.rt.x64\\19.35.32217.1\\emgu.runtime.windows.msvc.rt.x64.19.35.32217.1.nupkg.sha512",
+    "C:\\Users\\PCMR\\.nuget\\packages\\emgu.runtime.windows.msvc.rt.x86\\19.35.32217.1\\emgu.runtime.windows.msvc.rt.x86.19.35.32217.1.nupkg.sha512",
     "C:\\Users\\PCMR\\.nuget\\packages\\font.awesome\\5.15.4\\font.awesome.5.15.4.nupkg.sha512",
     "C:\\Users\\PCMR\\.nuget\\packages\\fontawesome.sharp\\6.2.1\\fontawesome.sharp.6.2.1.nupkg.sha512",
     "C:\\Users\\PCMR\\.nuget\\packages\\fontawesome.sharp.pro\\6.2.1\\fontawesome.sharp.pro.6.2.1.nupkg.sha512",

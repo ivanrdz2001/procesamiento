@@ -68,6 +68,10 @@
               "target": "Package",
               "version": "[4.7.0.5276, )"
             },
+            "Emgu.CV.runtime.windows": {
+              "target": "Package",
+              "version": "[4.7.0.5276, )"
+            },
             "Font.Awesome": {
               "target": "Package",
               "version": "[5.15.4, )"
