@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net5.0-windows7.0": {
+    "net7.0-windows7.0": {
       "AForge/2.2.5": {
         "type": "package",
         "compile": {
@@ -235,10 +235,10 @@
       "FontAwesome.Sharp/6.2.1": {
         "type": "package",
         "compile": {
-          "lib/netcoreapp3.1/FontAwesome.Sharp.dll": {}
+          "lib/net6.0-windows7.0/FontAwesome.Sharp.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp3.1/FontAwesome.Sharp.dll": {}
+          "lib/net6.0-windows7.0/FontAwesome.Sharp.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App"
@@ -250,10 +250,10 @@
           "FontAwesome.Sharp": "6.2.1"
         },
         "compile": {
-          "lib/netcoreapp3.1/FontAwesome.Sharp.Pro.dll": {}
+          "lib/net6.0-windows7.0/FontAwesome.Sharp.Pro.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp3.1/FontAwesome.Sharp.Pro.dll": {}
+          "lib/net6.0-windows7.0/FontAwesome.Sharp.Pro.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App"
@@ -1823,7 +1823,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net5.0-windows7.0": [
+    "net7.0-windows7.0": [
       "AForge >= 2.2.5",
       "AForge.Imaging >= 2.2.5",
       "AForge.Math >= 2.2.5",
@@ -1839,31 +1839,31 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\PCMR\\.nuget\\packages\\": {}
+    "C:\\Users\\alexr\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Procesamiento\\procesamiento\\ProcesamientoCorrecto\\ProcesamientoCorrecto\\ProcesamientoCorrecto.csproj",
+      "projectUniqueName": "C:\\Users\\alexr\\FCFM-TRABAJOS\\procesamiento\\ProcesamientoCorrecto\\ProcesamientoCorrecto\\ProcesamientoCorrecto.csproj",
       "projectName": "ProcesamientoCorrecto",
-      "projectPath": "D:\\Procesamiento\\procesamiento\\ProcesamientoCorrecto\\ProcesamientoCorrecto\\ProcesamientoCorrecto.csproj",
-      "packagesPath": "C:\\Users\\PCMR\\.nuget\\packages\\",
-      "outputPath": "D:\\Procesamiento\\procesamiento\\ProcesamientoCorrecto\\ProcesamientoCorrecto\\obj\\",
+      "projectPath": "C:\\Users\\alexr\\FCFM-TRABAJOS\\procesamiento\\ProcesamientoCorrecto\\ProcesamientoCorrecto\\ProcesamientoCorrecto.csproj",
+      "packagesPath": "C:\\Users\\alexr\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\alexr\\FCFM-TRABAJOS\\procesamiento\\ProcesamientoCorrecto\\ProcesamientoCorrecto\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\PCMR\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\alexr\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net5.0-windows"
+        "net7.0-windows"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net5.0-windows7.0": {
-          "targetAlias": "net5.0-windows",
+        "net7.0-windows7.0": {
+          "targetAlias": "net7.0-windows",
           "projectReferences": {}
         }
       },
@@ -1874,8 +1874,8 @@
       }
     },
     "frameworks": {
-      "net5.0-windows7.0": {
-        "targetAlias": "net5.0-windows",
+      "net7.0-windows7.0": {
+        "targetAlias": "net7.0-windows",
         "dependencies": {
           "AForge": {
             "target": "Package",
@@ -1945,7 +1945,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   },
@@ -1954,60 +1954,60 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "El paquete \"AForge 2.2.5\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net5.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "message": "El paquete \"AForge 2.2.5\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net7.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
       "libraryId": "AForge",
       "targetGraphs": [
-        "net5.0-windows7.0"
+        "net7.0-windows7.0"
       ]
     },
     {
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "El paquete \"AForge.Imaging 2.2.5\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net5.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "message": "El paquete \"AForge.Imaging 2.2.5\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net7.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
       "libraryId": "AForge.Imaging",
       "targetGraphs": [
-        "net5.0-windows7.0"
+        "net7.0-windows7.0"
       ]
     },
     {
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "El paquete \"AForge.Math 2.2.5\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net5.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "message": "El paquete \"AForge.Math 2.2.5\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net7.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
       "libraryId": "AForge.Math",
       "targetGraphs": [
-        "net5.0-windows7.0"
+        "net7.0-windows7.0"
       ]
     },
     {
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "El paquete \"AForge.Video 2.2.5\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net5.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "message": "El paquete \"AForge.Video 2.2.5\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net7.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
       "libraryId": "AForge.Video",
       "targetGraphs": [
-        "net5.0-windows7.0"
+        "net7.0-windows7.0"
       ]
     },
     {
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "El paquete \"AForge.Video.DirectShow 2.2.5\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net5.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "message": "El paquete \"AForge.Video.DirectShow 2.2.5\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net7.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
       "libraryId": "AForge.Video.DirectShow",
       "targetGraphs": [
-        "net5.0-windows7.0"
+        "net7.0-windows7.0"
       ]
     },
     {
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "El paquete \"AForge.Vision 2.2.5\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net5.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "message": "El paquete \"AForge.Vision 2.2.5\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net7.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
       "libraryId": "AForge.Vision",
       "targetGraphs": [
-        "net5.0-windows7.0"
+        "net7.0-windows7.0"
       ]
     }
   ]

@@ -36,6 +36,7 @@ namespace ProcesamientoCorrecto
         private void Capturado(object sender, NewFrameEventArgs eventArgs)
         {
             Bitmap Imagen = (Bitmap)eventArgs.Frame.Clone();
+            pictureBox1.Image = Imagen;
         }
 
         public void cargarDispositivos()
@@ -113,16 +114,16 @@ namespace ProcesamientoCorrecto
 
         private void camaraWebFoto_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CerrarWebCam();
+            //CerrarWebCam();
 
-            int i = camaraWebFoto.SelectedIndex;
-            if (i != -1)
-            {
-                string nombreVide = MyDispositivos[i].MonikerString;
-                MiWebCam = new VideoCaptureDevice(nombreVide);
-                MiWebCam.NewFrame += new NewFrameEventHandler(Capturado);
-                MiWebCam.Start();
-            }
+            //int i = camaraWebFoto.SelectedIndex;
+            //if (i != -1)
+            //{
+            //    string nombreVide = MyDispositivos[i].MonikerString;
+            //    MiWebCam = new VideoCaptureDevice(nombreVide);
+            //    MiWebCam.NewFrame += new NewFrameEventHandler(Capturado);
+            //    MiWebCam.Start();
+            //}
 
         }
 
@@ -181,6 +182,7 @@ namespace ProcesamientoCorrecto
                 MiWebCam.Stop();
             }
         }
+
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
