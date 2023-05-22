@@ -10,12 +10,17 @@ using System.Windows.Forms;
 using Emgu.CV;
 using Emgu.CV.Structure;
 using Emgu.CV.CvEnum;
-using AForge.Video.DirectShow;
 using AForge.Video;
+using AForge.Video.DirectShow;
+using AForge.Vision.Motion;
 
-using FaceRecognition;
-using System.Windows.Media.Media3D;
+using Emgu.CV.Face;
+using System.IO;
+using System.Threading;
 using System.Drawing.Imaging;
+using System.Diagnostics;
+using Emgu.CV.Util;
+using FaceRecognition;
 
 namespace ProcesamientoCorrecto
 {
@@ -25,7 +30,8 @@ namespace ProcesamientoCorrecto
         private VideoCaptureDevice MiWebCam = null;
         private bool HayDispositivos;
         static readonly CascadeClassifier cascadeClassifier = new CascadeClassifier("haarcascade_frontalface_alt_tree.xml");
-
+        private bool buttonPress;
+        FaceRec faceRec = new FaceRec();
 
         public Form3()
         {
@@ -99,15 +105,23 @@ namespace ProcesamientoCorrecto
 
         private void activateCamara_Click(object sender, EventArgs e)
         {
-            CerrarWebCam();
-
-            int i = camaraWebFoto.SelectedIndex;
-            if (i != -1)
+            if (buttonPress == false)
             {
-                string nombreVide = MyDispositivos[i].MonikerString;
-                MiWebCam = new VideoCaptureDevice(nombreVide);
+                buttonPress = true;
+                CerrarWebCam();
+                int i = camaraWebFoto.SelectedIndex;
+                string videoName = MyDispositivos[i].MonikerString;
+                MiWebCam = new VideoCaptureDevice(videoName);
                 MiWebCam.NewFrame += new NewFrameEventHandler(Capturado);
-                MiWebCam.Start();
+                faceRec.openCamera(pictureBox1, pictureBox1);
+                //myWebCam.Start();
+
+
+            }
+            else
+            {
+                buttonPress = false;
+                CerrarWebCam();
             }
 
         }
@@ -129,37 +143,37 @@ namespace ProcesamientoCorrecto
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+ 
         }
 
         private void Device_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
-            Bitmap bitmap = (Bitmap)eventArgs.Frame.Clone();
+            //Bitmap bitmap = (Bitmap)eventArgs.Frame.Clone();
 
-            // Convertir bitmap a arreglo de bytes
-            Rectangle rect = new Rectangle(0, 0, bitmap.Width, bitmap.Height);
-            BitmapData bmpData = bitmap.LockBits(rect, ImageLockMode.ReadOnly, bitmap.PixelFormat);
-            IntPtr ptr = bmpData.Scan0;
-            int bytes = Math.Abs(bmpData.Stride) * bitmap.Height;
-            byte[] rgbValues = new byte[bytes];
-            System.Runtime.InteropServices.Marshal.Copy(ptr, rgbValues, 0, bytes);
-            bitmap.UnlockBits(bmpData);
+            //// Convertir bitmap a arreglo de bytes
+            //Rectangle rect = new Rectangle(0, 0, bitmap.Width, bitmap.Height);
+            //BitmapData bmpData = bitmap.LockBits(rect, ImageLockMode.ReadOnly, bitmap.PixelFormat);
+            //IntPtr ptr = bmpData.Scan0;
+            //int bytes = Math.Abs(bmpData.Stride) * bitmap.Height;
+            //byte[] rgbValues = new byte[bytes];
+            //System.Runtime.InteropServices.Marshal.Copy(ptr, rgbValues, 0, bytes);
+            //bitmap.UnlockBits(bmpData);
 
-            // Crear nueva imagen a partir del arreglo de bytes
-            Image<Bgr, byte> grayImage = new Image<Bgr, byte>(bitmap.Width, bitmap.Height);
-            grayImage.Bytes = rgbValues;
+            //// Crear nueva imagen a partir del arreglo de bytes
+            //Image<Bgr, byte> grayImage = new Image<Bgr, byte>(bitmap.Width, bitmap.Height);
+            //grayImage.Bytes = rgbValues;
 
-            Rectangle[] rectangles = cascadeClassifier.DetectMultiScale(grayImage, 1.2, 1);
-            foreach (Rectangle rectangle in rectangles)
-            {
-                using (Graphics graphics = Graphics.FromImage(bitmap))
-                {
-                    using (Pen pen = new Pen(Color.Red, 1))
-                    {
-                        graphics.DrawRectangle(pen, rectangle);
-                    }
-                }
-            }
+            //Rectangle[] rectangles = cascadeClassifier.DetectMultiScale(grayImage, 1.2, 1);
+            //foreach (Rectangle rectangle in rectangles)
+            //{
+            //    using (Graphics graphics = Graphics.FromImage(bitmap))
+            //    {
+            //        using (Pen pen = new Pen(Color.Red, 1))
+            //        {
+            //            graphics.DrawRectangle(pen, rectangle);
+            //        }
+            //    }
+            //}
         }
 
         private void detectarRostros_Click(object sender, EventArgs e)

@@ -17,12 +17,13 @@
     <PackageReference Include="AForge.Video" Version="2.2.5" />
     <PackageReference Include="AForge.Video.DirectShow" Version="2.2.5" />
     <PackageReference Include="AForge.Vision" Version="2.2.5" />
-    <PackageReference Include="Emgu.CV" Version="4.7.0.5276" />
-    <PackageReference Include="Emgu.CV.runtime.windows" Version="4.7.0.5276" />
     <PackageReference Include="Font.Awesome" Version="5.15.4" />
     <PackageReference Include="FontAwesome.Sharp" Version="6.2.1" />
     <PackageReference Include="FontAwesome.Sharp.Pro" Version="6.2.1" />
     <PackageReference Include="Material.Icons" Version="1.1.35" />
+    <PackageReference Include="OpenTK" Version="1.1.2225" />
+    <PackageReference Include="OpenTK.GLControl" Version="1.1.2225" />
+    <PackageReference Include="ZedGraph" Version="5.1.5" />
   </ItemGroup>
 
   <ItemGroup>
@@ -37,6 +38,12 @@
     </Reference>
     <Reference Include="Emgu.CV.UI">
       <HintPath>bin\Debug\Emgu.CV.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.UI.GL">
+      <HintPath>EmguCV.3.1.0.1\lib\net30\Emgu.CV.UI.GL.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.World">
+      <HintPath>EmguCV.3.1.0.1\lib\net30\Emgu.CV.World.dll</HintPath>
     </Reference>
     <Reference Include="Emgu.Util">
       <HintPath>bin\Debug\Emgu.Util.dll</HintPath>

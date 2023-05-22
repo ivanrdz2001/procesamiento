@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using System.Xaml;
 using AForge.Video;
 using AForge.Video.DirectShow;
+using Emgu.CV;
+using Emgu.CV.Structure;
+using Emgu.CV.UI;
 
 namespace ProcesamientoCorrecto
 {
@@ -53,7 +56,7 @@ namespace ProcesamientoCorrecto
             ItemObject[0] = "NEGATIVO";
             ItemObject[1] = "BLANCO/NEGRO";
             ItemObject[2] = "DESENFOQUE";
-            ItemObject[3] = "BORDES OSCUROS";
+            ItemObject[3] = "BORDES GRISES";
             ItemObject[4] = "SEPIA";
             ItemObject[5] = "ABERRACION CROMATICA";
             ItemObject[6] = "PIXEL";
@@ -102,6 +105,7 @@ namespace ProcesamientoCorrecto
                 MiWebCam = null;
             }
         }
+
 
         private void comboEfectosImagen_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -264,11 +268,12 @@ namespace ProcesamientoCorrecto
                         }
                         break;
 
-                    case "DESENFOQUE":
+                    case "RUIDO":
                         {
 
 
-                        }break;
+                        }
+                        break;
 
                     case "MEXICO EN BREAKING BAD":
                         {
