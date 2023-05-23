@@ -280,6 +280,8 @@ namespace ProcesamientoCorrecto
             this.Controls.Add(this.panel1);
             this.Name = "FormImage";
             this.Text = "Form2";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormImage_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormImage_FormClosed);
             this.Load += new System.EventHandler(this.FormMenu_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

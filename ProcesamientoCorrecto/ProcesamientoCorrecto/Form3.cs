@@ -93,31 +93,9 @@ namespace ProcesamientoCorrecto
         }
 
 
-        private void BtnTurnOn_Click(object sender, EventArgs e)
+        private void btnActivarCamara_Click(object sender, EventArgs e)
         {
-            CloseCurrentDevice();
-            ResetDetectionControls();
-           // noCameraIcon.BringToFront();
-            if (oldSelectedIndex != newSelectedIndex)
-            {
 
-                int i = camaraWebFoto.SelectedIndex;
-                string deviceName = myDevices[i].MonikerString;
-
-                //Video Capture
-                selectedDevice = new VideoCaptureDevice(deviceName);
-
-                selectedDevice.NewFrame += new NewFrameEventHandler(Capturing);
-                detectPeople.Enabled = true;
-
-                selectedDevice.Start();
-            //    noCameraIcon.SendToBack();
-                oldSelectedIndex = newSelectedIndex;
-            }
-            else
-            {
-                oldSelectedIndex = -1;
-            }
         }
 
 
@@ -336,19 +314,11 @@ namespace ProcesamientoCorrecto
 
         private void ResetDetectionControls()
         {
-            detectedUsers.Text = "No video entry";
+            detectedUsers.Text = "No hay señal de video";
             detectPeople.Enabled = false;
         }
 
 
-        private void btnAddPerson_Click(object sender, EventArgs e)
-        {
-            enableDetectFaces = !enableDetectFaces;
-            button2.Enabled = enableDetectFaces;
-            //detectPeople.Enabled = false;
-            enableSaveImage = false;
-            detectedFace.Image = null;
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -397,6 +367,44 @@ namespace ProcesamientoCorrecto
 
         }
 
+        private void btnActivarCamara_Click_1(object sender, EventArgs e)
+        {
+            CloseCurrentDevice();
+            ResetDetectionControls();
+            // noCameraIcon.BringToFront();
+            int i = camaraWebFoto.SelectedIndex;
 
+            if (oldSelectedIndex != newSelectedIndex || i != -1)
+            {
+
+
+                string deviceName = myDevices[i].MonikerString;
+
+                //Video Capture
+                selectedDevice = new VideoCaptureDevice(deviceName);
+
+                selectedDevice.NewFrame += new NewFrameEventHandler(Capturing);
+                detectPeople.Enabled = true;
+
+                selectedDevice.Start();
+                //    noCameraIcon.SendToBack();
+                oldSelectedIndex = newSelectedIndex;
+            }
+            else
+            {
+                oldSelectedIndex = -1;
+            }
+        }
+
+        private void detectPeople_Click(object sender, EventArgs e)
+        {
+            enableDetectFaces = !enableDetectFaces;
+            button2.Enabled = enableDetectFaces;
+            //detectPeople.Enabled = false;
+            enableSaveImage = false;
+            detectedFace.Image = null;
+            MessageBox.Show("Ingrese un nombre para la persona");
+
+        }
     }
 }

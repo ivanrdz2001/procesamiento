@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xaml;
+using AForge.Imaging.Filters;
 using AForge.Video;
 using AForge.Video.DirectShow;
 using Emgu.CV;
@@ -103,7 +104,10 @@ namespace ProcesamientoCorrecto
             {
                 MiWebCam.SignalToStop();
                 MiWebCam = null;
+                cameraBox.Image=null;
             }
+        
+
         }
 
 
@@ -537,6 +541,17 @@ namespace ProcesamientoCorrecto
             }
 
 
+        }
+
+        private void FormImage_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            CerrarWebCam();
+        }
+
+        private void FormImage_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+            CerrarWebCam();
         }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)

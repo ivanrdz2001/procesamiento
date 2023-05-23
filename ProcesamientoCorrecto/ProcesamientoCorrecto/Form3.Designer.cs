@@ -41,20 +41,19 @@ namespace ProcesamientoCorrecto
             this.button2 = new System.Windows.Forms.Button();
             this.camaraWebFoto = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pBVideoPreview = new System.Windows.Forms.PictureBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.detectedFace = new System.Windows.Forms.PictureBox();
             this.nombrePersonTB = new System.Windows.Forms.TextBox();
-            this.addPerson = new System.Windows.Forms.Button();
             this.btnActivarCamara = new System.Windows.Forms.Button();
-            this.pBVideoPreview = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resetMainButton)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBVideoPreview)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.detectedFace)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBVideoPreview)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -80,6 +79,7 @@ namespace ProcesamientoCorrecto
             this.detectPeople.TabIndex = 19;
             this.detectPeople.Text = "Detectar personas";
             this.detectPeople.UseVisualStyleBackColor = false;
+            this.detectPeople.Click += new System.EventHandler(this.detectPeople_Click);
             // 
             // groupBox1
             // 
@@ -183,6 +183,16 @@ namespace ProcesamientoCorrecto
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Imagen";
             // 
+            // pBVideoPreview
+            // 
+            this.pBVideoPreview.Location = new System.Drawing.Point(41, 52);
+            this.pBVideoPreview.Name = "pBVideoPreview";
+            this.pBVideoPreview.Size = new System.Drawing.Size(456, 277);
+            this.pBVideoPreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pBVideoPreview.TabIndex = 0;
+            this.pBVideoPreview.TabStop = false;
+            this.pBVideoPreview.Click += new System.EventHandler(this.pBVideoPreview_Click);
+            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.detectedFace);
@@ -210,16 +220,6 @@ namespace ProcesamientoCorrecto
             this.nombrePersonTB.Size = new System.Drawing.Size(221, 23);
             this.nombrePersonTB.TabIndex = 21;
             // 
-            // addPerson
-            // 
-            this.addPerson.Location = new System.Drawing.Point(1032, 258);
-            this.addPerson.Name = "addPerson";
-            this.addPerson.Size = new System.Drawing.Size(221, 23);
-            this.addPerson.TabIndex = 22;
-            this.addPerson.Text = "Añadir persona";
-            this.addPerson.UseVisualStyleBackColor = true;
-            this.addPerson.Click += new System.EventHandler(this.addPerson_Click_1);
-            // 
             // btnActivarCamara
             // 
             this.btnActivarCamara.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -232,16 +232,7 @@ namespace ProcesamientoCorrecto
             this.btnActivarCamara.TabIndex = 23;
             this.btnActivarCamara.Text = "Activar cámara";
             this.btnActivarCamara.UseVisualStyleBackColor = false;
-            // 
-            // pBVideoPreview
-            // 
-            this.pBVideoPreview.Location = new System.Drawing.Point(41, 52);
-            this.pBVideoPreview.Name = "pBVideoPreview";
-            this.pBVideoPreview.Size = new System.Drawing.Size(456, 277);
-            this.pBVideoPreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pBVideoPreview.TabIndex = 0;
-            this.pBVideoPreview.TabStop = false;
-            this.pBVideoPreview.Click += new System.EventHandler(this.pBVideoPreview_Click);
+            this.btnActivarCamara.Click += new System.EventHandler(this.btnActivarCamara_Click_1);
             // 
             // Form3
             // 
@@ -253,7 +244,6 @@ namespace ProcesamientoCorrecto
             this.ClientSize = new System.Drawing.Size(1308, 607);
             this.ControlBox = false;
             this.Controls.Add(this.btnActivarCamara);
-            this.Controls.Add(this.addPerson);
             this.Controls.Add(this.nombrePersonTB);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.button2);
@@ -270,9 +260,9 @@ namespace ProcesamientoCorrecto
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.resetMainButton)).EndInit();
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pBVideoPreview)).EndInit();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.detectedFace)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pBVideoPreview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,7 +283,6 @@ namespace ProcesamientoCorrecto
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.PictureBox detectedFace;
         private System.Windows.Forms.TextBox nombrePersonTB;
-        private System.Windows.Forms.Button addPerson;
         private System.Windows.Forms.Button detectPeople;
         private System.Windows.Forms.Button btnActivarCamara;
         private System.Windows.Forms.PictureBox pBVideoPreview;
