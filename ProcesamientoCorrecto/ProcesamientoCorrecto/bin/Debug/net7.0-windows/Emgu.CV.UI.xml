@@ -14,15 +14,13 @@
             Construct a histogram control
             </summary>
         </member>
-        <member name="M:Emgu.CV.UI.HistogramBox.AddHistogram(System.String,System.Drawing.Color,Emgu.CV.Mat,System.Int32,System.Single[])">
+        <member name="M:Emgu.CV.UI.HistogramBox.AddHistogram(System.String,System.Drawing.Color,Emgu.CV.DenseHistogram)">
             <summary>
             Add a plot of the 1D histogram. You should call the Refresh() function to update the control after all modification is complete.
             </summary>
             <param name="name">The name of the histogram</param>
             <param name="color">The drawing color</param>
             <param name="histogram">The 1D histogram to be drawn</param>
-            <param name="binSize">The size of the bin</param>
-            <param name="ranges">The ranges</param>
         </member>
         <member name="M:Emgu.CV.UI.HistogramBox.GenerateHistograms(Emgu.CV.IImage,System.Int32)">
             <summary>
@@ -86,6 +84,13 @@
             </summary>
             <param name="image">The image to retrieve hostigram from</param>
             <param name="numberOfBins">The numebr of bins in the histogram</param>
+        </member>
+        <member name="M:Emgu.CV.UI.HistogramViewer.Show(Emgu.CV.DenseHistogram,System.String)">
+            <summary>
+            Display the specific histogram
+            </summary>
+            <param name="hist">The 1 dimension histogram to be displayed</param>
+            <param name="title">The name of the histogram</param>
         </member>
         <member name="F:Emgu.CV.UI.HistogramViewer.components">
             <summary>
@@ -167,18 +172,12 @@
             <param name="s2">The second size</param>
             <returns>The minimum of the two sizes</returns>
         </member>
-        <member name="M:Emgu.CV.UI.PanAndZoomPictureBox.DrawReversibleRectangle(System.Drawing.Rectangle)">
+        <member name="M:Emgu.CV.UI.PanAndZoomPictureBox.GetSelectedRectangle(System.Drawing.Point,System.Drawing.Point)">
             <summary>
-            Draw a reversible rectangle on the control.
+            Get the rectangle defined by the two points
             </summary>
-            <param name="rect">The rectangle using the control's coordinate system</param>
-        </member>
-        <member name="M:Emgu.CV.UI.PanAndZoomPictureBox.GetRectangle(System.Drawing.Point,System.Drawing.Point)">
-            <summary>
-            Get the rectangle defined by the two points on the control
-            </summary>
-            <param name="p1">The first point on the control</param>
-            <param name="p2">The second point on the control</param>
+            <param name="p1">The first point</param>
+            <param name="p2">The second point</param>
             <returns>the rectangle defined by the two points</returns>
         </member>
         <member name="M:Emgu.CV.UI.PanAndZoomPictureBox.SetZoomScale(System.Double,System.Drawing.Point)">
@@ -340,6 +339,11 @@
         <member name="M:Emgu.CV.UI.ImageProperty.#ctor">
             <summary>
             Create a ImageProperty control
+            </summary>
+        </member>
+        <member name="F:Emgu.CV.UI.ImageProperty._buffer">
+            <summary>
+            A buffer used by SetMousePositionOnImage function
             </summary>
         </member>
         <member name="M:Emgu.CV.UI.ImageProperty.SetMousePositionOnImage(System.Drawing.Point)">

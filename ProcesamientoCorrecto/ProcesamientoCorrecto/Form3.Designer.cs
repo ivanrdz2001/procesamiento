@@ -29,10 +29,11 @@ namespace ProcesamientoCorrecto
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Button activateCamara;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.detectPeople = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.detectedUsers = new System.Windows.Forms.Label();
             this.Salir = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -40,32 +41,26 @@ namespace ProcesamientoCorrecto
             this.button2 = new System.Windows.Forms.Button();
             this.camaraWebFoto = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            activateCamara = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.detectedFace = new System.Windows.Forms.PictureBox();
+            this.nombrePersonTB = new System.Windows.Forms.TextBox();
+            this.addPerson = new System.Windows.Forms.Button();
+            this.btnActivarCamara = new System.Windows.Forms.Button();
+            this.pBVideoPreview = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resetMainButton)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.detectedFace)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBVideoPreview)).BeginInit();
             this.SuspendLayout();
-            // 
-            // activateCamara
-            // 
-            activateCamara.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            activateCamara.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            activateCamara.Font = new System.Drawing.Font("Coolvetica Rg", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            activateCamara.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            activateCamara.Location = new System.Drawing.Point(604, 519);
-            activateCamara.Name = "activateCamara";
-            activateCamara.Size = new System.Drawing.Size(207, 62);
-            activateCamara.TabIndex = 19;
-            activateCamara.Text = "Apagar cámara";
-            activateCamara.UseVisualStyleBackColor = false;
-            activateCamara.Click += new System.EventHandler(this.activateCamara_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Gold;
+            this.panel1.Controls.Add(this.detectPeople);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.Salir);
             this.panel1.Controls.Add(this.groupBox3);
@@ -74,8 +69,21 @@ namespace ProcesamientoCorrecto
             this.panel1.Size = new System.Drawing.Size(207, 505);
             this.panel1.TabIndex = 5;
             // 
+            // detectPeople
+            // 
+            this.detectPeople.BackColor = System.Drawing.Color.Orange;
+            this.detectPeople.Font = new System.Drawing.Font("Montserrat Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.detectPeople.ForeColor = System.Drawing.Color.Transparent;
+            this.detectPeople.Location = new System.Drawing.Point(15, 37);
+            this.detectPeople.Name = "detectPeople";
+            this.detectPeople.Size = new System.Drawing.Size(177, 120);
+            this.detectPeople.TabIndex = 19;
+            this.detectPeople.Text = "Detectar personas";
+            this.detectPeople.UseVisualStyleBackColor = false;
+            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.detectedUsers);
             this.groupBox1.Font = new System.Drawing.Font("Montserrat Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.Location = new System.Drawing.Point(22, 181);
             this.groupBox1.Name = "groupBox1";
@@ -83,6 +91,15 @@ namespace ProcesamientoCorrecto
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Personas detectadas";
+            // 
+            // detectedUsers
+            // 
+            this.detectedUsers.AutoSize = true;
+            this.detectedUsers.Location = new System.Drawing.Point(48, 52);
+            this.detectedUsers.Name = "detectedUsers";
+            this.detectedUsers.Size = new System.Drawing.Size(0, 22);
+            this.detectedUsers.TabIndex = 0;
+            this.detectedUsers.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Salir
             // 
@@ -125,7 +142,7 @@ namespace ProcesamientoCorrecto
             this.resetMainButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.resetMainButton.TabIndex = 2;
             this.resetMainButton.TabStop = false;
-            this.resetMainButton.Click += new System.EventHandler(this.resetMainButton_Click_1);
+            this.resetMainButton.Click += new System.EventHandler(this.resetMainButton_Click);
             // 
             // button2
             // 
@@ -157,7 +174,7 @@ namespace ProcesamientoCorrecto
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox2.Controls.Add(this.pictureBox1);
+            this.groupBox2.Controls.Add(this.pBVideoPreview);
             this.groupBox2.Font = new System.Drawing.Font("Coolvetica Rg", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.Location = new System.Drawing.Point(455, 12);
             this.groupBox2.Name = "groupBox2";
@@ -166,15 +183,65 @@ namespace ProcesamientoCorrecto
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Imagen";
             // 
-            // pictureBox1
+            // groupBox4
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(63, 63);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(414, 267);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 20;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.groupBox4.Controls.Add(this.detectedFace);
+            this.groupBox4.Font = new System.Drawing.Font("Montserrat Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBox4.Location = new System.Drawing.Point(1032, 25);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(221, 165);
+            this.groupBox4.TabIndex = 20;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Cara detectada";
+            // 
+            // detectedFace
+            // 
+            this.detectedFace.Location = new System.Drawing.Point(0, 26);
+            this.detectedFace.Name = "detectedFace";
+            this.detectedFace.Size = new System.Drawing.Size(215, 133);
+            this.detectedFace.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.detectedFace.TabIndex = 0;
+            this.detectedFace.TabStop = false;
+            // 
+            // nombrePersonTB
+            // 
+            this.nombrePersonTB.Location = new System.Drawing.Point(1032, 215);
+            this.nombrePersonTB.Name = "nombrePersonTB";
+            this.nombrePersonTB.Size = new System.Drawing.Size(221, 23);
+            this.nombrePersonTB.TabIndex = 21;
+            // 
+            // addPerson
+            // 
+            this.addPerson.Location = new System.Drawing.Point(1032, 258);
+            this.addPerson.Name = "addPerson";
+            this.addPerson.Size = new System.Drawing.Size(221, 23);
+            this.addPerson.TabIndex = 22;
+            this.addPerson.Text = "Añadir persona";
+            this.addPerson.UseVisualStyleBackColor = true;
+            this.addPerson.Click += new System.EventHandler(this.addPerson_Click_1);
+            // 
+            // btnActivarCamara
+            // 
+            this.btnActivarCamara.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnActivarCamara.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActivarCamara.Font = new System.Drawing.Font("Montserrat Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnActivarCamara.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnActivarCamara.Location = new System.Drawing.Point(557, 522);
+            this.btnActivarCamara.Name = "btnActivarCamara";
+            this.btnActivarCamara.Size = new System.Drawing.Size(354, 73);
+            this.btnActivarCamara.TabIndex = 23;
+            this.btnActivarCamara.Text = "Activar cámara";
+            this.btnActivarCamara.UseVisualStyleBackColor = false;
+            // 
+            // pBVideoPreview
+            // 
+            this.pBVideoPreview.Location = new System.Drawing.Point(41, 52);
+            this.pBVideoPreview.Name = "pBVideoPreview";
+            this.pBVideoPreview.Size = new System.Drawing.Size(456, 277);
+            this.pBVideoPreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pBVideoPreview.TabIndex = 0;
+            this.pBVideoPreview.TabStop = false;
+            this.pBVideoPreview.Click += new System.EventHandler(this.pBVideoPreview_Click);
             // 
             // Form3
             // 
@@ -185,7 +252,10 @@ namespace ProcesamientoCorrecto
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1308, 607);
             this.ControlBox = false;
-            this.Controls.Add(activateCamara);
+            this.Controls.Add(this.btnActivarCamara);
+            this.Controls.Add(this.addPerson);
+            this.Controls.Add(this.nombrePersonTB);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.camaraWebFoto);
             this.Controls.Add(this.groupBox2);
@@ -195,12 +265,16 @@ namespace ProcesamientoCorrecto
             this.Text = "Form3";
             this.Load += new System.EventHandler(this.Form3_Load);
             this.panel1.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.resetMainButton)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.detectedFace)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBVideoPreview)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -215,6 +289,13 @@ namespace ProcesamientoCorrecto
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button Salir;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label detectedUsers;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.PictureBox detectedFace;
+        private System.Windows.Forms.TextBox nombrePersonTB;
+        private System.Windows.Forms.Button addPerson;
+        private System.Windows.Forms.Button detectPeople;
+        private System.Windows.Forms.Button btnActivarCamara;
+        private System.Windows.Forms.PictureBox pBVideoPreview;
     }
 }

@@ -14,12 +14,11 @@ namespace ProcesamientoCorrecto
     public partial class Form1 : Form
     {
 
-        private Bitmap original;
         private Bitmap resultante;
         private int[] histograma = new int[256];
         private int[,] conv3x3 = new int[3, 3];
         private int factor;
-        private int offset;
+
 
         //Variables para el double buffer y evitar el flicker
         private int anchoVentana, altoVentana;

@@ -64,6 +64,18 @@
               "target": "Package",
               "version": "[2.2.5, )"
             },
+            "Emgu.CV": {
+              "target": "Package",
+              "version": "[4.6.0.5131, )"
+            },
+            "Emgu.CV.Bitmap": {
+              "target": "Package",
+              "version": "[4.6.0.5131, )"
+            },
+            "Emgu.CV.runtime.windows": {
+              "target": "Package",
+              "version": "[4.6.0.5131, )"
+            },
             "Font.Awesome": {
               "target": "Package",
               "version": "[5.15.4, )"
