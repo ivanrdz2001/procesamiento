@@ -246,6 +246,18 @@
           }
         }
       },
+      "EmguCV/3.1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "OpenTK": "1.1.2225",
+          "OpenTK.GLControl": "1.1.2225",
+          "ZedGraph": "5.1.5"
+        },
+        "build": {
+          "build/EmguCV.props": {},
+          "build/EmguCV.targets": {}
+        }
+      },
       "Font.Awesome/5.15.4": {
         "type": "package"
       },
@@ -825,6 +837,29 @@
         "runtimes/win-x86/native/msvcp140_atomic_wait.dll",
         "runtimes/win-x86/native/msvcp140_codecvt_ids.dll",
         "runtimes/win-x86/native/vcruntime140.dll"
+      ]
+    },
+    "EmguCV/3.1.0.1": {
+      "sha512": "xiYFPDqGeHsMQLhY/GLgBwduIyAJuGug4T1X0lhQ4JbdPgPcR9P2lk5HTQ8npLLFVdvNPGLLzQGYxksy2jq52Q==",
+      "type": "package",
+      "path": "emgucv/3.1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/EmguCV.props",
+        "build/EmguCV.targets",
+        "build/native/x64/cvextern.dll",
+        "build/native/x64/opencv_ffmpeg310_64.dll",
+        "build/native/x86/cvextern.dll",
+        "build/native/x86/opencv_ffmpeg310.dll",
+        "emgucv.3.1.0.1.nupkg.sha512",
+        "emgucv.nuspec",
+        "lib/net30/Emgu.CV.UI.GL.dll",
+        "lib/net30/Emgu.CV.UI.GL.xml",
+        "lib/net30/Emgu.CV.UI.dll",
+        "lib/net30/Emgu.CV.UI.xml",
+        "lib/net30/Emgu.CV.World.dll",
+        "lib/net30/Emgu.CV.World.xml"
       ]
     },
     "Font.Awesome/5.15.4": {
@@ -2078,6 +2113,7 @@
       "Emgu.CV >= 4.6.0.5131",
       "Emgu.CV.Bitmap >= 4.6.0.5131",
       "Emgu.CV.runtime.windows >= 4.6.0.5131",
+      "EmguCV >= 3.1.0.1",
       "Font.Awesome >= 5.15.4",
       "FontAwesome.Sharp >= 6.2.1",
       "FontAwesome.Sharp.Pro >= 6.2.1",
@@ -2161,6 +2197,10 @@
           "Emgu.CV.runtime.windows": {
             "target": "Package",
             "version": "[4.6.0.5131, )"
+          },
+          "EmguCV": {
+            "target": "Package",
+            "version": "[3.1.0.1, )"
           },
           "Font.Awesome": {
             "target": "Package",
