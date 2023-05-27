@@ -12,6 +12,7 @@ using AForge.Imaging.Filters;
 using AForge.Video;
 using AForge.Video.DirectShow;
 using Emgu.CV;
+using Emgu.CV.CvEnum;
 using Emgu.CV.Structure;
 using Emgu.CV.UI;
 
@@ -56,8 +57,8 @@ namespace ProcesamientoCorrecto
 
             ItemObject[0] = "NEGATIVO";
             ItemObject[1] = "BLANCO/NEGRO";
-            ItemObject[2] = "DESENFOQUE";
-            ItemObject[3] = "BORDES GRISES";
+            ItemObject[2] = "RELIEVE";
+            ItemObject[3] = "ESPEJO";
             ItemObject[4] = "SEPIA";
             ItemObject[5] = "ABERRACION CROMATICA";
             ItemObject[6] = "PIXEL";
@@ -73,6 +74,42 @@ namespace ProcesamientoCorrecto
 
         private void aboutMainForm_Click(object sender, EventArgs e)
         {
+
+        }
+
+
+
+        private void blackandwhite(Color oColor, Color rColor)
+        {
+            float gb = 0;
+            for (x = 0; x < original.Width; x++)
+            {
+                for (y = 0; y < original.Height; y++)
+                {
+                    oColor = original.GetPixel(x, y);
+
+                    gb = oColor.R * 0.299f + oColor.G * 0.587f + oColor.B * 0.114f;
+
+                    rColor = Color.FromArgb((int)gb, (int)gb, (int)gb);
+
+                    resultante.SetPixel(x, y, rColor);
+                }
+            }
+        }
+        public void mirrorImage(Color oColor, Color rColor)
+        {
+
+            for (int y = 0; y < original.Height; y++)
+            {
+                for (int lx = 0, rx = original.Width - 1; lx < original.Width; lx++, rx--)
+                {
+                    // Get source pixel value
+                    oColor = original.GetPixel(lx, y);
+
+                    // Set mirror pixel value
+                    resultante.SetPixel(rx, y, oColor);
+                }
+            }
 
         }
 
@@ -110,6 +147,32 @@ namespace ProcesamientoCorrecto
 
         }
 
+        private Bitmap RELIEVE(Color oColor, Color rColor, double factor = 1)
+        {
+            Bitmap result = new Bitmap(original.Width, original.Height);
+
+            for (int y = 1; y < original.Height - 1; y++)
+            {
+                for (int x = 1; x < original.Width - 1; x++)
+                {
+                    Color currentPixel = original.GetPixel(x, y);
+                    Color previousPixel = original.GetPixel(x - 1, y - 1);
+
+                    int r = Clamp((int)(currentPixel.R - previousPixel.R * factor + 128));
+                    int g = Clamp((int)(currentPixel.G - previousPixel.G * factor + 128));
+                    int b = Clamp((int)(currentPixel.B - previousPixel.B * factor + 128));
+
+                    result.SetPixel(x, y, Color.FromArgb(r, g, b));
+                }
+            }
+
+            return result;
+        }
+
+        private int Clamp(int value, int min = 0, int max = 255)
+        {
+            return Math.Max(min, Math.Min(value, max));
+        }
 
         private void comboEfectosImagen_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -222,6 +285,11 @@ namespace ProcesamientoCorrecto
                         }
 
 
+                    case "RELIEVE":
+                        {
+                            resultante = RELIEVE(oColor, rColor, 1);
+                        }
+                        break;
 
                     case "BLANCO/NEGRO":
                         {
@@ -272,12 +340,12 @@ namespace ProcesamientoCorrecto
                         }
                         break;
 
-                    case "RUIDO":
+                    case "ESPEJO":
                         {
-
-
+                            mirrorImage(oColor, rColor);
                         }
                         break;
+
 
                     case "MEXICO EN BREAKING BAD":
                         {
@@ -314,23 +382,7 @@ namespace ProcesamientoCorrecto
 
 
 
-        private void blackandwhite(Color oColor,Color rColor)
-        {
-            float gb = 0;
-            for (x = 0; x < original.Width; x++)
-            {
-                for (y = 0; y < original.Height; y++)
-                {
-                    oColor = original.GetPixel(x, y);
 
-                    gb = oColor.R * 0.299f + oColor.G * 0.587f + oColor.B * 0.114f;
-
-                    rColor = Color.FromArgb((int)gb, (int)gb, (int)gb);
-
-                    resultante.SetPixel(x, y, rColor);
-                }
-            }
-        }
 
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
         {

@@ -258,6 +258,13 @@
           }
         }
       },
+      "EmguCV/3.1.0.1": {
+        "dependencies": {
+          "OpenTK": "1.1.2225",
+          "OpenTK.GLControl": "1.1.2225",
+          "ZedGraph": "5.1.5"
+        }
+      },
       "Font.Awesome/5.15.4": {},
       "FontAwesome.Sharp/6.2.1": {
         "runtime": {
@@ -596,6 +603,13 @@
       "sha512": "sha512-Jwqm4yrJRDWs4rUmcpwUVvDuISRgp6WJvCX/n1rTy52GjnWKvzTYOPvhKiAH2alB/bBGbNhyP5UvmhUeN3dOXw==",
       "path": "emgu.runtime.windows.msvc.rt.x86/19.33.31630",
       "hashPath": "emgu.runtime.windows.msvc.rt.x86.19.33.31630.nupkg.sha512"
+    },
+    "EmguCV/3.1.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xiYFPDqGeHsMQLhY/GLgBwduIyAJuGug4T1X0lhQ4JbdPgPcR9P2lk5HTQ8npLLFVdvNPGLLzQGYxksy2jq52Q==",
+      "path": "emgucv/3.1.0.1",
+      "hashPath": "emgucv.3.1.0.1.nupkg.sha512"
     },
     "Font.Awesome/5.15.4": {
       "type": "package",

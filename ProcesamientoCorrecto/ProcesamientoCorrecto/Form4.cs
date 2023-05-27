@@ -14,6 +14,7 @@ using Emgu.CV.CvEnum;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using OpenTK.Graphics.OpenGL;
+using static ProcesamientoCorrecto.VideoManipulation;
 
 namespace ProcesamientoCorrecto
 {
@@ -30,29 +31,22 @@ namespace ProcesamientoCorrecto
         String fileName;
 
         Mat currentFrame = new Mat();
-        List<Bitmap> arrayBitmaps;
-        //ImageManipulation modifyRGB = new ImageManipulation();
-        //FileOperations getFile = new FileOperations();
+        VideoManipulation modifyRGB = new VideoManipulation();
 
 
 
-
+        public string[] ItemObject =
+{
+            "SOLARIZAR","BLANCO/NEGRO","NEGATIVO","ESPEJO","RELIEVE","GLITCH","PIXEL"
+        };
 
         public Form4()
         {
             InitializeComponent();
-            System.Object[] ItemObject = new System.Object[8];
+            //System.Object[] ItemObject = new System.Object[8];
 
-            ItemObject[0] = "NEGATIVO";
-            ItemObject[1] = "BLANCO/NEGRO";
-            ItemObject[2] = "DESENFOQUE";
-            ItemObject[3] = "BORDES GRISES";
-            ItemObject[4] = "SEPIA";
-            ItemObject[5] = "ABERRACION CROMATICA";
-            ItemObject[6] = "PIXEL";
-            ItemObject[7] = "MEXICO EN BREAKING BAD";
-
-
+            modifyRGB.ImageFinished += OnImageFinished;
+            comboEfectosImagen.Items.AddRange(ItemObject);
 
         }
 
@@ -91,19 +85,25 @@ namespace ProcesamientoCorrecto
 
         private void playVideo_Click(object sender, EventArgs e)
         {
-            if (index == 0)
+            if (isPlaying)
             {
-                playVideo.Text = "Play";
-                timer1.Stop();
-                index = 1;
+                playVideo.BackColor = Color.FromArgb(210, 150, 57);
 
+                isPlaying = false;
             }
-            else if (index != 0)
+            else
             {
-                playVideo.Text = "Pausa";
-                timer1.Start();
-                index = 0;
+                playVideo.BackColor = Color.FromArgb(10, 13, 39);
 
+
+                if (currentFrameNumber == 0)
+                {
+                    videoCapture = new VideoCapture(fileName);
+                    totalFrames = Convert.ToInt32(videoCapture.Get(Emgu.CV.CvEnum.CapProp.FrameCount));
+                    fps = Convert.ToInt32(videoCapture.Get(Emgu.CV.CvEnum.CapProp.Fps));
+                    currentFrame = new Mat();
+                }
+                PlayVideo();
             }
         }
 
@@ -163,13 +163,7 @@ namespace ProcesamientoCorrecto
                     while (isPlaying && currentFrameNumber < totalFrames)
                     {
 
-                        chartHistOriginal.Series["Red"].Points.Clear();
-                        chartHistOriginal.Series["Green"].Points.Clear();
-                        chartHistOriginal.Series["Blue"].Points.Clear();
 
-                        chartHistEdited.Series["Red"].Points.Clear();
-                        chartHistEdited.Series["Green"].Points.Clear();
-                        chartHistEdited.Series["Blue"].Points.Clear();
 
                         videoCapture.Read(currentFrame);
 
@@ -177,15 +171,15 @@ namespace ProcesamientoCorrecto
 
                         originalFile = new Bitmap(newFile);
 
-                        DisplayImage(originalFile, 1);
-                        DisplayImage(newFile, 2);
+                        mostrarImagen(originalFile, 1);
+                        mostrarImagen(newFile, 2);
 
                         modifyRGB.getLockBitsHistogram(originalFile, 'r', 1);
                         modifyRGB.getLockBitsHistogram(originalFile, 'b', 1);
                         modifyRGB.getLockBitsHistogram(originalFile, 'g', 1);
 
                         if (activeFilter >= 0)
-                            modifyRGB.ManipulateLockBits(newFile, activeFilter + 1, tbSliderControl.Value);
+                            modifyRGB.ManipulateLockBits(newFile, activeFilter + 1);
 
 
                         currentFrameNumber++;
@@ -211,6 +205,47 @@ namespace ProcesamientoCorrecto
                 }
 
             }
+        }
+
+        private void comboEfectosImagen_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            activeFilter = comboEfectosImagen.SelectedIndex;
+        }
+
+        private void reestablecerVideo_Click(object sender, EventArgs e)
+        {
+            activeFilter = -1;
+        }
+
+        void OnImageFinished(object sender, ImageEventArgs e)
+        {
+            mostrarImagen(e.bmap, 2);
+            modifyRGB.getLockBitsHistogram(e.bmap, 'r', 2);
+            modifyRGB.getLockBitsHistogram(e.bmap, 'g', 2);
+            modifyRGB.getLockBitsHistogram(e.bmap, 'b', 2);
+        }
+
+        public void mostrarImagen(Bitmap b, int window)
+        {
+            if (window == 1)
+            {
+                pictureBox1.Image = b;
+            }
+            else if (window == 2)
+            {
+                newpicture2.Image = b;
+            }
+            else
+            {
+                pictureBox1.Image = b;
+                newpicture2.Image = b;
+            }
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e) //NEW PICTURE 2
+        {
+
         }
     }
 }
