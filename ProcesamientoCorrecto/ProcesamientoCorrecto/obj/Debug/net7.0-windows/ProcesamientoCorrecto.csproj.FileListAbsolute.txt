@@ -16,9 +16,7 @@ C:\Users\alexr\FCFM-TRABAJOS\procesamiento\ProcesamientoCorrecto\ProcesamientoCo
 C:\Users\alexr\FCFM-TRABAJOS\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\Debug\net7.0-windows\Material.Icons.dll
 C:\Users\alexr\FCFM-TRABAJOS\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\Debug\net7.0-windows\runtimes\win-arm64\native\cvextern.dll
 C:\Users\alexr\FCFM-TRABAJOS\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\Debug\net7.0-windows\runtimes\win-x64\native\cvextern.dll
-C:\Users\alexr\FCFM-TRABAJOS\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\Debug\net7.0-windows\runtimes\win-x64\native\opencv_videoio_ffmpeg470_64.dll
 C:\Users\alexr\FCFM-TRABAJOS\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\Debug\net7.0-windows\runtimes\win-x86\native\cvextern.dll
-C:\Users\alexr\FCFM-TRABAJOS\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\Debug\net7.0-windows\runtimes\win-x86\native\opencv_videoio_ffmpeg470.dll
 C:\Users\alexr\FCFM-TRABAJOS\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\Debug\net7.0-windows\runtimes\win-arm64\native\concrt140.dll
 C:\Users\alexr\FCFM-TRABAJOS\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\Debug\net7.0-windows\runtimes\win-arm64\native\msvcp140.dll
 C:\Users\alexr\FCFM-TRABAJOS\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\Debug\net7.0-windows\runtimes\win-arm64\native\msvcp140_1.dll
@@ -144,3 +142,9 @@ D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\D
 D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\Debug\net7.0-windows\runtimes\win-x86\native\vcruntime140.dll
 D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\Debug\net7.0-windows\runtimes\win-x64\native\opencv_videoio_ffmpeg460_64.dll
 D:\Procesamiento\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\Debug\net7.0-windows\runtimes\win-x86\native\opencv_videoio_ffmpeg460.dll
+C:\Users\alexr\FCFM-TRABAJOS\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\Debug\net7.0-windows\Emgu.CV.Bitmap.dll
+C:\Users\alexr\FCFM-TRABAJOS\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\Debug\net7.0-windows\OpenTK.dll
+C:\Users\alexr\FCFM-TRABAJOS\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\Debug\net7.0-windows\OpenTK.GLControl.dll
+C:\Users\alexr\FCFM-TRABAJOS\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\Debug\net7.0-windows\ZedGraph.dll
+C:\Users\alexr\FCFM-TRABAJOS\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\Debug\net7.0-windows\runtimes\win-x64\native\opencv_videoio_ffmpeg460_64.dll
+C:\Users\alexr\FCFM-TRABAJOS\procesamiento\ProcesamientoCorrecto\ProcesamientoCorrecto\bin\Debug\net7.0-windows\runtimes\win-x86\native\opencv_videoio_ffmpeg460.dll

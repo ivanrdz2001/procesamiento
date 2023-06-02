@@ -19,6 +19,23 @@ namespace ProcesamientoCorrecto
     public partial class Form3 : Form
     {
 
+        public class ComboboxItem
+        {
+            public string Text { get; set; }
+            public object Value { get; set; }
+
+            public ComboboxItem(string text, object value)
+            {
+                Text = text;
+                Value = value;
+            }
+
+            public override string ToString()
+            {
+                return Text;
+            }
+        }
+
         class DatosFaciales
         {
             public string PersonName { get; set; }
@@ -55,9 +72,8 @@ namespace ProcesamientoCorrecto
                 return;
             }
 
-            string myFileName = Path.Combine(System.Windows.Forms.Application.StartupPath, "haarcascade_frontalface_default.xml");
+            var haarCascade = new CascadeClassifier("haarcascade_frontalface_default.xml");
 
-            var haarCascade = new CascadeClassifier(myFileName);
             while (OpenCamera)
             {
                 using (var frame = camera.QueryFrame().ToImage<Bgr, Byte>())
@@ -70,7 +86,7 @@ namespace ProcesamientoCorrecto
 
                     foreach (var face in faces)
                     {
-                        frame.Draw(face, new Bgr(Color.Red), 2);
+                        frame.Draw(face, new Bgr(Color.Orange), 2);
                         caradetectada = grayFrame.Copy(face).Convert<Gray, Byte>();
                     }
 
@@ -104,7 +120,7 @@ namespace ProcesamientoCorrecto
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (selectedFace.Image != null)
+            if (pBVideoPreview.Image != null)
             {
                 SaveFileDialog sfd = new SaveFileDialog
                 {
@@ -118,19 +134,19 @@ namespace ProcesamientoCorrecto
 
                 if (sfd.ShowDialog() == DialogResult.OK)
                 {
-                    selectedFace.Image.Save(sfd.FileName);
+                    NEWFACE.Image.Save(sfd.FileName);
                 }
             }
             else
             {
-                MessageBox.Show("No hay rostros registrados", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No se está mostrando nada", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
         private void detectPeople_Click(object sender, EventArgs e)
         {
             string personName = nombrePersonTB.Text;
 
-            if (selectedFace == null)
+            if (NEWFACE == null)
             {
                 MessageBox.Show("No hay rostros detectados.");
                 return;
@@ -143,7 +159,7 @@ namespace ProcesamientoCorrecto
 
             //Guardar rostro detectado
             caradetectada = caradetectada.Resize(100, 100, Inter.Cubic);
-            caradetectada.Save("Faces\\" + "face" + (faceList.Count + 1) + ".bmp"); ;
+            caradetectada.Save("Faces\\" + "face" + (faceList.Count + 1) + ".jpg"); ;
 
             StreamWriter writer = new StreamWriter("Faces\\FaceList.txt", true);
 
@@ -172,7 +188,6 @@ namespace ProcesamientoCorrecto
             {
                 string text = "No se puede encontrar el archivo de datos faciales:\n\n";
                 text += "Faces\\FaceList.txt" + "\n\n";
-                text += "Si es la primera vez que ejecuta la aplicación, se creará un archivo vacio para usted.";
 
                 MessageBox.Show(text, "Aviso", MessageBoxButtons.OK);
 
@@ -190,11 +205,10 @@ namespace ProcesamientoCorrecto
             {
                 string[] lineParts = line.Split(':');
                 faceInstance = new DatosFaciales();
-                faceInstance.FaceImage = new Image<Gray, Byte>("Faces\\" + lineParts[0] + ".bmp");
+                faceInstance.FaceImage = new Image<Gray, Byte>("Faces\\" + lineParts[0] + ".jpg");
                 faceInstance.PersonName = lineParts[1];
                 faceList.Add(faceInstance);
             }
-
             foreach (var face in faceList)
             {
                 imageList.Push(face.FaceImage.Mat);
@@ -203,18 +217,21 @@ namespace ProcesamientoCorrecto
                 NameListCB.Items.Add(face.PersonName);
                 nombrePersonTB.Text = String.Empty;
             }
-
             reader.Close();
-        }
-        private void NameList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string currentSelection = NameListCB.SelectedItem.ToString();
 
+        }
+
+
+        private void NameListCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string currentSelection = ((ComboboxItem)NameListCB.SelectedItem).Text;
+            string a;
+            a = currentSelection;
             foreach (var face in faceList)
             {
                 if (face.PersonName == currentSelection)
                 {
-                    selectedFace.Image = face.FaceImage.ToBitmap();
+                    NEWFACE.Image = face.FaceImage.ToBitmap();
                 }
             }
 
@@ -237,7 +254,17 @@ namespace ProcesamientoCorrecto
             this.Hide();
         }
 
+        private void NameListCB_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            string currentSelection = NameListCB.SelectedItem.ToString();
 
-
+            foreach (var face in faceList)
+            {
+                if (face.PersonName == currentSelection)
+                {
+                    NEWFACE.Image = face.FaceImage.ToBitmap();
+                }
+            }
+        }
     }
 }
