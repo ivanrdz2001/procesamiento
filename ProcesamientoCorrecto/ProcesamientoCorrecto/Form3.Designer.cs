@@ -46,6 +46,7 @@ namespace ProcesamientoCorrecto
             this.detectedFace = new System.Windows.Forms.PictureBox();
             this.nombrePersonTB = new System.Windows.Forms.TextBox();
             this.btnActivarCamara = new System.Windows.Forms.Button();
+            this.analyzeFace = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -142,7 +143,7 @@ namespace ProcesamientoCorrecto
             this.resetMainButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.resetMainButton.TabIndex = 2;
             this.resetMainButton.TabStop = false;
-            this.resetMainButton.Click += new System.EventHandler(this.resetMainButton_Click);
+            this.resetMainButton.Click += new System.EventHandler(this.resetMainButton_Click_1);
             // 
             // button2
             // 
@@ -150,9 +151,9 @@ namespace ProcesamientoCorrecto
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Montserrat Black", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(479, 442);
+            this.button2.Location = new System.Drawing.Point(1060, 244);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(487, 71);
+            this.button2.Size = new System.Drawing.Size(166, 97);
             this.button2.TabIndex = 17;
             this.button2.Text = "Guardar foto";
             this.button2.UseVisualStyleBackColor = false;
@@ -191,7 +192,6 @@ namespace ProcesamientoCorrecto
             this.pBVideoPreview.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pBVideoPreview.TabIndex = 0;
             this.pBVideoPreview.TabStop = false;
-            this.pBVideoPreview.Click += new System.EventHandler(this.pBVideoPreview_Click);
             // 
             // groupBox4
             // 
@@ -226,13 +226,25 @@ namespace ProcesamientoCorrecto
             this.btnActivarCamara.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActivarCamara.Font = new System.Drawing.Font("Montserrat Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnActivarCamara.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnActivarCamara.Location = new System.Drawing.Point(557, 522);
+            this.btnActivarCamara.Location = new System.Drawing.Point(559, 427);
             this.btnActivarCamara.Name = "btnActivarCamara";
             this.btnActivarCamara.Size = new System.Drawing.Size(354, 73);
             this.btnActivarCamara.TabIndex = 23;
             this.btnActivarCamara.Text = "Activar cámara";
             this.btnActivarCamara.UseVisualStyleBackColor = false;
-            this.btnActivarCamara.Click += new System.EventHandler(this.btnActivarCamara_Click_1);
+            this.btnActivarCamara.Click += new System.EventHandler(this.btnActivarCamara_Click);
+            // 
+            // analyzeFace
+            // 
+            this.analyzeFace.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.analyzeFace.Font = new System.Drawing.Font("Montserrat Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.analyzeFace.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.analyzeFace.Location = new System.Drawing.Point(1060, 367);
+            this.analyzeFace.Name = "analyzeFace";
+            this.analyzeFace.Size = new System.Drawing.Size(166, 62);
+            this.analyzeFace.TabIndex = 24;
+            this.analyzeFace.Text = "Analizar";
+            this.analyzeFace.UseVisualStyleBackColor = false;
             // 
             // Form3
             // 
@@ -243,6 +255,7 @@ namespace ProcesamientoCorrecto
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1308, 607);
             this.ControlBox = false;
+            this.Controls.Add(this.analyzeFace);
             this.Controls.Add(this.btnActivarCamara);
             this.Controls.Add(this.nombrePersonTB);
             this.Controls.Add(this.groupBox4);
@@ -286,5 +299,6 @@ namespace ProcesamientoCorrecto
         private System.Windows.Forms.Button detectPeople;
         private System.Windows.Forms.Button btnActivarCamara;
         private System.Windows.Forms.PictureBox pBVideoPreview;
+        private System.Windows.Forms.Button analyzeFace;
     }
 }

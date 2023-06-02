@@ -28,17 +28,17 @@ namespace ProcesamientoCorrecto
         private VideoCaptureDevice selectedDevice;
         private int newSelectedIndex = -1;
         private int oldSelectedIndex = -1;
-        private static bool enableSaveImage = false;
-        private static bool enableDetectFaces = false;
+        private bool enableSaveImage = false;
+        private bool enableDetectFaces = false;
 
         List<Mat> trainedFaces = new List<Mat>();
         List<int> personLabels = new List<int>();
         List<string> PersonsNames = new List<string>();
         EigenFaceRecognizer recognizer;
         private static bool isTrained = false;
-        private static bool isClosing = false;
 
-        static string myFileName = Path.Combine(System.Windows.Forms.Application.StartupPath, "haarcascade_frontalface_default.xml");
+
+        static string myFileName = Path.Combine(System.Windows.Forms.Application.StartupPath, "haarcascade_frontalface_alt_tree.xml");
 
         CascadeClassifier faceCascadeClassifier = new CascadeClassifier(myFileName);
         #endregion
@@ -52,7 +52,6 @@ namespace ProcesamientoCorrecto
         {
             LoadDevicesList();
             btnActivarCamara.Enabled = false;
-            isClosing = false;
         }
 
 
@@ -64,6 +63,26 @@ namespace ProcesamientoCorrecto
             newSelectedIndex = camaraWebFoto.SelectedIndex;
         }
 
+        private void resetMainButton_Click_1(object sender, EventArgs e)
+        {
+            FormMenu frm = new FormMenu();
+
+            frm.Show();
+
+            this.Hide();
+        }
+
+        private void Form3_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (selectedDevice.IsRunning)
+            {
+                selectedDevice.Stop();
+            }
+        }
+        private void Salir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
 
         public void LoadDevicesList()
         {
@@ -95,15 +114,32 @@ namespace ProcesamientoCorrecto
 
         private void btnActivarCamara_Click(object sender, EventArgs e)
         {
+            CloseCurrentDevice();
+            ResetDetectionControls();
+            if (oldSelectedIndex != newSelectedIndex)
+            {
 
+                int i = camaraWebFoto.SelectedIndex;
+                string deviceName = myDevices[i].MonikerString;
+
+                //Video Capture
+                selectedDevice = new VideoCaptureDevice(deviceName);
+
+                selectedDevice.NewFrame += new NewFrameEventHandler(Capturing);
+                detectPeople.Enabled = true;
+
+                selectedDevice.Start();
+                oldSelectedIndex = newSelectedIndex;
+            }
+            else
+            {
+                oldSelectedIndex = -1;
+            }
         }
 
 
         private void Capturing(object sender, NewFrameEventArgs eventArgs)
         {
-            if (isClosing)
-                return;
-
             //Clone the frame
             Bitmap currentFrame = (Bitmap)eventArgs.Frame.Clone();
 
@@ -117,7 +153,6 @@ namespace ProcesamientoCorrecto
             //CvInvoke.EqualizeHist(grayImage, grayImage);
 
             Rectangle[] faces = faceCascadeClassifier.DetectMultiScale(grayImage, 1.1, 3, Size.Empty, Size.Empty);
-
 
             ThreadSafe(() =>
             {
@@ -155,13 +190,15 @@ namespace ProcesamientoCorrecto
                             Directory.CreateDirectory(path);
 
 
-                        //Save image
+                        //Save 10 images with delay a second for each image
                         ThreadSafe(() =>
                         {
-                            //resize the image to save it
-                            resultImage.Resize(200, 200, Inter.Cubic).Save(path + @"\" + nombrePersonTB.Text + "_" + DateTime.Now.ToString("dd-mm-yyyy-hh-mm-ss") + ".jpg");
-                            Thread.Sleep(1000);
-                            nombrePersonTB.Text = "";
+                            for (int i = 0; i < 1; i++)
+                            {
+                                //resize the image to save it
+                                resultImage.Resize(200, 200, Inter.Cubic).Save(path + @"\" + nombrePersonTB.Text + "_" + DateTime.Now.ToString("dd-mm-yyyy-hh-mm-ss") + ".jpg");
+                                Thread.Sleep(1000);
+                            }
 
                         }, this);
 
@@ -210,20 +247,6 @@ namespace ProcesamientoCorrecto
         }
         #endregion
 
-        private void Salir_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-
-        }
-        private void resetMainButton_Click(object sender, EventArgs e)
-        {
-
-            FormMenu frm = new FormMenu();
-
-            frm.Show();
-
-            this.Hide();
-        }
         private bool TrainImagesFromDir()
         {
             isTrained = false;
@@ -295,14 +318,15 @@ namespace ProcesamientoCorrecto
         private void ThreadSafe(Action callback, Form form)
         {
             BackgroundWorker worker = new BackgroundWorker();
-            worker.WorkerSupportsCancellation = true;
-
             worker.RunWorkerCompleted += (obj, e) =>
             {
-                if (form.InvokeRequired)
-                    form.Invoke(callback);
-                else
-                    callback();
+                if (!form.IsDisposed) // Verificar si el formulario está desechado
+                {
+                    if (form.InvokeRequired)
+                        form.Invoke(callback);
+                    else
+                        callback();
+                }
             };
             worker.RunWorkerAsync();
         }
@@ -314,20 +338,26 @@ namespace ProcesamientoCorrecto
 
         private void ResetDetectionControls()
         {
-            detectedUsers.Text = "No hay señal de video";
+            detectedUsers.Text = "No hay";
             detectPeople.Enabled = false;
         }
 
+        private void Form3_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            CloseCurrentDevice();
+        }
 
+        private void detectPeople_Click(object sender, EventArgs e)
+        {
+            button2.Enabled = true;
+            enableDetectFaces = !enableDetectFaces;
+            //detectPeople.Enabled = false;
+            enableSaveImage = false;
+            detectedFace.Image = null;
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (nombrePersonTB.Text.Length == 0)
-            {
-                MessageBox.Show("Ingrese un nombre para la persona");
-                return;
-            }
-
             button2.Enabled = true;
             //detectPeople.Enabled = false;
             enableSaveImage = true;
@@ -340,71 +370,6 @@ namespace ProcesamientoCorrecto
             //{
             //    btnAnalyze.Enabled = false;
             //}
-        }
-
-        private void Form3_FormClosing(object sender, FormClosingEventArgs e)
-        {
-
-            isClosing = true;
-            CloseCurrentDevice();
-            enableSaveImage = false;
-            enableDetectFaces = false;
-            isTrained = false;
-
-        }
-
-        private void Form3_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            CloseCurrentDevice();
-        }
-
-        private void pBVideoPreview_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void addPerson_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnActivarCamara_Click_1(object sender, EventArgs e)
-        {
-            CloseCurrentDevice();
-            ResetDetectionControls();
-            // noCameraIcon.BringToFront();
-            int i = camaraWebFoto.SelectedIndex;
-
-            if (oldSelectedIndex != newSelectedIndex || i != -1)
-            {
-
-
-                string deviceName = myDevices[i].MonikerString;
-
-                //Video Capture
-                selectedDevice = new VideoCaptureDevice(deviceName);
-
-                selectedDevice.NewFrame += new NewFrameEventHandler(Capturing);
-                detectPeople.Enabled = true;
-
-                selectedDevice.Start();
-                //    noCameraIcon.SendToBack();
-                oldSelectedIndex = newSelectedIndex;
-            }
-            else
-            {
-                oldSelectedIndex = -1;
-            }
-        }
-
-        private void detectPeople_Click(object sender, EventArgs e)
-        {
-            enableDetectFaces = !enableDetectFaces;
-            button2.Enabled = enableDetectFaces;
-            //detectPeople.Enabled = false;
-            enableSaveImage = false;
-            detectedFace.Image = null;
-            MessageBox.Show("Ingrese un nombre para la persona");
-
         }
     }
 }

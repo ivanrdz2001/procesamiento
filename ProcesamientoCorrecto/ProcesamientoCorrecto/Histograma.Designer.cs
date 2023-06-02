@@ -52,8 +52,10 @@
             this.histogram1.Location = new System.Drawing.Point(6, 41);
             this.histogram1.Name = "histogram1";
             this.histogram1.Size = new System.Drawing.Size(302, 320);
+            this.histogram1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.histogram1.TabIndex = 0;
             this.histogram1.TabStop = false;
+            this.histogram1.Click += new System.EventHandler(this.histogram1_Click);
             // 
             // Histograma
             // 

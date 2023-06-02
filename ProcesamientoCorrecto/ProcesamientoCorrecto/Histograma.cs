@@ -49,5 +49,10 @@ namespace ProcesamientoCorrecto
 
             for (n = 0; n < 256; n++) { g.DrawLine(plumaH, n + 20, 270, n + 20, 270 - histograma[n]); }
         }
+
+        private void histogram1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
