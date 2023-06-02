@@ -38,7 +38,7 @@ namespace ProcesamientoCorrecto
         private static bool isTrained = false;
         private static bool isClosing = false;
 
-        static string myFileName = Path.Combine(System.Windows.Forms.Application.StartupPath, "haarcascade_frontalface_alt_tree.xml");
+        static string myFileName = Path.Combine(System.Windows.Forms.Application.StartupPath, "haarcascade_frontalface_default.xml");
 
         CascadeClassifier faceCascadeClassifier = new CascadeClassifier(myFileName);
         #endregion
