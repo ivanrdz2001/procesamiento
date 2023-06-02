@@ -159,7 +159,7 @@ namespace ProcesamientoCorrecto
 
             //Guardar rostro detectado
             caradetectada = caradetectada.Resize(100, 100, Inter.Cubic);
-            caradetectada.Save("Faces\\" + "face" + (faceList.Count + 1) + ".jpg"); ;
+            caradetectada.Save("Faces\\" + "face" + (faceList.Count + 1) + ".bmp"); ;
 
             StreamWriter writer = new StreamWriter("Faces\\FaceList.txt", true);
 
@@ -205,7 +205,7 @@ namespace ProcesamientoCorrecto
             {
                 string[] lineParts = line.Split(':');
                 faceInstance = new DatosFaciales();
-                faceInstance.FaceImage = new Image<Gray, Byte>("Faces\\" + lineParts[0] + ".jpg");
+                faceInstance.FaceImage = new Image<Gray, Byte>("Faces\\" + lineParts[0] + ".bmp");
                 faceInstance.PersonName = lineParts[1];
                 faceList.Add(faceInstance);
             }
