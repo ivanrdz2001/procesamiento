@@ -43,10 +43,12 @@ namespace ProcesamientoCorrecto
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pBVideoPreview = new System.Windows.Forms.PictureBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.detectedFace = new System.Windows.Forms.PictureBox();
+            this.selectedFace = new System.Windows.Forms.PictureBox();
             this.nombrePersonTB = new System.Windows.Forms.TextBox();
             this.btnActivarCamara = new System.Windows.Forms.Button();
             this.analyzeFace = new System.Windows.Forms.Button();
+            this.NameListCB = new System.Windows.Forms.ComboBox();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -54,7 +56,7 @@ namespace ProcesamientoCorrecto
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pBVideoPreview)).BeginInit();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.detectedFace)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectedFace)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -151,7 +153,7 @@ namespace ProcesamientoCorrecto
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Montserrat Black", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(1060, 244);
+            this.button2.Location = new System.Drawing.Point(1059, 315);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(166, 97);
             this.button2.TabIndex = 17;
@@ -170,7 +172,6 @@ namespace ProcesamientoCorrecto
             this.camaraWebFoto.Size = new System.Drawing.Size(553, 30);
             this.camaraWebFoto.TabIndex = 15;
             this.camaraWebFoto.Text = "Elige una cámara";
-            this.camaraWebFoto.SelectedIndexChanged += new System.EventHandler(this.camaraWebFoto_SelectedIndexChanged);
             // 
             // groupBox2
             // 
@@ -195,7 +196,7 @@ namespace ProcesamientoCorrecto
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.detectedFace);
+            this.groupBox4.Controls.Add(this.selectedFace);
             this.groupBox4.Font = new System.Drawing.Font("Montserrat Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox4.Location = new System.Drawing.Point(1032, 25);
             this.groupBox4.Name = "groupBox4";
@@ -204,14 +205,14 @@ namespace ProcesamientoCorrecto
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Cara detectada";
             // 
-            // detectedFace
+            // selectedFace
             // 
-            this.detectedFace.Location = new System.Drawing.Point(0, 26);
-            this.detectedFace.Name = "detectedFace";
-            this.detectedFace.Size = new System.Drawing.Size(215, 133);
-            this.detectedFace.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.detectedFace.TabIndex = 0;
-            this.detectedFace.TabStop = false;
+            this.selectedFace.Location = new System.Drawing.Point(0, 26);
+            this.selectedFace.Name = "selectedFace";
+            this.selectedFace.Size = new System.Drawing.Size(215, 133);
+            this.selectedFace.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.selectedFace.TabIndex = 0;
+            this.selectedFace.TabStop = false;
             // 
             // nombrePersonTB
             // 
@@ -239,12 +240,20 @@ namespace ProcesamientoCorrecto
             this.analyzeFace.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.analyzeFace.Font = new System.Drawing.Font("Montserrat Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.analyzeFace.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.analyzeFace.Location = new System.Drawing.Point(1060, 367);
+            this.analyzeFace.Location = new System.Drawing.Point(1059, 438);
             this.analyzeFace.Name = "analyzeFace";
             this.analyzeFace.Size = new System.Drawing.Size(166, 62);
             this.analyzeFace.TabIndex = 24;
             this.analyzeFace.Text = "Analizar";
             this.analyzeFace.UseVisualStyleBackColor = false;
+            // 
+            // NameListCB
+            // 
+            this.NameListCB.FormattingEnabled = true;
+            this.NameListCB.Location = new System.Drawing.Point(1032, 260);
+            this.NameListCB.Name = "NameListCB";
+            this.NameListCB.Size = new System.Drawing.Size(221, 23);
+            this.NameListCB.TabIndex = 25;
             // 
             // Form3
             // 
@@ -255,6 +264,7 @@ namespace ProcesamientoCorrecto
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1308, 607);
             this.ControlBox = false;
+            this.Controls.Add(this.NameListCB);
             this.Controls.Add(this.analyzeFace);
             this.Controls.Add(this.btnActivarCamara);
             this.Controls.Add(this.nombrePersonTB);
@@ -275,7 +285,7 @@ namespace ProcesamientoCorrecto
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pBVideoPreview)).EndInit();
             this.groupBox4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.detectedFace)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectedFace)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,11 +304,13 @@ namespace ProcesamientoCorrecto
         private System.Windows.Forms.Button Salir;
         private System.Windows.Forms.Label detectedUsers;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.PictureBox detectedFace;
+        private System.Windows.Forms.PictureBox selectedFace;
         private System.Windows.Forms.TextBox nombrePersonTB;
         private System.Windows.Forms.Button detectPeople;
         private System.Windows.Forms.Button btnActivarCamara;
         private System.Windows.Forms.PictureBox pBVideoPreview;
         private System.Windows.Forms.Button analyzeFace;
+        private System.Windows.Forms.ComboBox NameListCB;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
